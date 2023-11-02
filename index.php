@@ -1,1 +1,1 @@
-message
+<?php phpinfo();
