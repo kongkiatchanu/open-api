@@ -11,7 +11,7 @@ class Docs extends REST_Controller
         // Construct the parent class
         parent::__construct();
        
-        $this->methods['index_get']['limit'] = 1; // 500 requests per hour per user/key
+        $this->methods['index_get']['limit'] = 5; // 500 requests per hour per user/key
 
     }
 
