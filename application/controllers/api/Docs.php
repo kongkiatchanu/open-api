@@ -30,7 +30,7 @@ class Docs extends REST_Controller
 
     public function index_get()
     {
-        $this->check_origin();
+        //$this->check_origin();
         $data = array(
             "status" => TRUE,
             "message" => "welcome CMUCCDC AI APIs Datas :)"
