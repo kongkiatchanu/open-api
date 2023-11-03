@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<nav id="nevbarleft">
 		<div class="side-nav">
 			<div class="sidebar-header">
-				<img src="images/logo.png" alt="logo">
+				<img src="https://www.cmuccdc.org/template/image/logo_ccdc.png" alt="logo">
 			</div>
 			<div class="nav-bar deznav-scroll">
 				<ul class="list-unstyled components navbar-nav nav" id="download-button">
