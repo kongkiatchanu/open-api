@@ -111,7 +111,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<p>This documentation is last updated on 1 Jan 2024</p>
 				<div class="wishes-bx">
 					<p>Hi I'm DustBoy</p>
-					<p class="rating-text">Please, <a href="#">sign up</a> to use our fast and easy-to-work DustBoy APIs.</p>
+					<p class="rating-text">Please, <a href="#" class="btn-link">sign up</a> to use our fast and easy-to-work DustBoy APIs.</p>
 				</div>
 			</div>
 		</section>
