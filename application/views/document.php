@@ -93,10 +93,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<section class="slide-banner overlay-black" style="background-image: url(images/bg2.jpg);">
 			<div class="container">
 				<div class="inner-content">
-					<h1 class="title">Documentation</h1>
+					<h1 class="title">Climate Change Data Center</h1>
 					<div class="colored-line"></div>
 					<div class="section-description">
-					Climate Change Data Center
+					Documentation
 					</div>
 					<div class="colored-line"></div>
 				</div>
