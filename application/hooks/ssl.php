@@ -13,3 +13,11 @@ function redirect_ssl() {
         if ($_SERVER['SERVER_PORT'] == 443) redirect($CI->uri->uri_string());
     }
 }
+
+function force_ssl() {
+    $server=$_SERVER["SERVER_NAME"];
+    $uri=$_SERVER["REQUEST_URI"];
+    if ($_SERVER['HTTPS'] == 'off') {
+        redirect("https://{$server}{$uri}");
+    }
+}
