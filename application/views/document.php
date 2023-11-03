@@ -96,7 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<h1 class="title">Documentation</h1>
 					<div class="colored-line"></div>
 					<div class="section-description">
-						CMUCCDC: Fast And Easy-To-Work APIs
+					Climate Change Data Center
 					</div>
 					<div class="colored-line"></div>
 				</div>
