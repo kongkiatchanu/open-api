@@ -90,7 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</header>
 		
 		<!-- Banner -->
-		<section class="slide-banner overlay-black" style="background-image: url(https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?auto=format&fit=crop&q=80&w=3538&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+		<section class="slide-banner overlay-black" style="background-image: url(https://images.unsplash.com/photo-1469365556835-3da3db4c253b?auto=format&fit=crop&q=60&w=900&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YWlyJTIwY2xvdWR8ZW58MHx8MHx8fDA%3D);">
 			<div class="container">
 				<div class="inner-content">
 					<h1 class="title">Documentation</h1>
