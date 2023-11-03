@@ -109,11 +109,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<h2 class="title">CMUCCDC</h2>
 				<h4 class="sub-title">ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ</h4>
 				<p>This documentation is last updated on 1 Jan 2024</p>
+				<p class="text-left">ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ (Climate Change Data Center: CCDC) มหาวิทยาลัยเชียงใหม่ (www.cmuccdc.org) ได้ดำเนินโครงการ "เครือข่ายเฝ้าระวังและเตือนภัยวิกฤตหมอกควันภาคประชาชน (People AQI)" ร่วมกับเครือข่ายติดตั้งเครื่องตรวจวัดคุณภาพอากาศ DustBoy ภายใต้การสนับสนุนของสำนักงานการวิจัยแห่งชาติ (วช.) ในการติดตั้งเครื่องวัดฝุ่น "DustBoy" มากกว่า 400 จุด ทั่วประเทศ ทำให้สามารถแสดงข้อมูลคุณภาพอากาศได้ครอบคลุมทุกจังหวัดในประเทศไทย</p>
 				<div class="wishes-bx">
 					<p>Hi I'm DustBoy</p>
 					<p class="rating-text">Please, <a href="#" class="btn-link">sign up</a> to use our fast and easy-to-work DustBoy APIs.</p>
 				</div>
-			</div>
+			</div>	
 		</section>
 		
 		<hr>
