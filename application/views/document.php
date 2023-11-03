@@ -46,15 +46,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="nav-bar deznav-scroll">
 				<ul class="list-unstyled components navbar-nav nav" id="download-button">
 					<li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
-					<li class="nav-item"><a class="nav-link" href="#sass-compile">Sass Compile</a></li>
-					<li class="nav-item"><a class="nav-link" href="#theme_features">Theme Features</a></li>
-					<li class="nav-item"><a class="nav-link" href="#html_file">HTML File</a></li>
-					<li class="nav-item"><a class="nav-link" href="#credits_file">Credits</a></li>
-					<li class="nav-item"><a class="nav-link" href="#pwa">PWA Settings</a></li>
-					<li class="nav-item"><a class="nav-link" href="#our_product">Our Products</a></li>
-					<li class="nav-item"><a class="nav-link" href="#html_structure">Basic HTML Structure</a></li>
-					<li class="nav-item"><a class="nav-link" href="#custom_work">Custom Work Requirements </a></li>
-					<li class="nav-item"><a class="nav-link" href="#version_history">Version History</a></li>
+					<li class="nav-item"><a class="nav-link" href="#apikey">API KEY</a></li>
+					<li class="nav-item"><a class="nav-link" href="#station_list">stations</a></li>
+					<li class="nav-item"><a class="nav-link" href="#station_region">region</a></li>
+					<li class="nav-item"><a class="nav-link" href="#station_current">current</a></li>
+					<li class="nav-item"><a class="nav-link" href="#station_detail">details</a></li>
+
 				</ul>
 			</div>
 			<div class="sidebar-bottom">
