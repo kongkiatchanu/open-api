@@ -6,13 +6,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	
 	<!-- Title -->
-	<title>W3Meat: Meat Shop Mobile App Template ( Bootstrap + PWA )</title>
+	<title>CMUCCDC APIs Documentation</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
 	<meta name="theme-color" content="#009688">
-	<meta name="author" content="DexignZone">
+	<meta name="author" content="signOutz">
 	<meta name="robots" content="index, follow"> 
 	 
 	
@@ -58,12 +58,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</ul>
 			</div>
 			<div class="sidebar-bottom">
-				<h6 class="name">W3Meat: Meat Shop Mobile App Template</h6>
+				<h6 class="name">Dustboy: Open APIs Docs</h6>
 				<span class="ver-info">Version 1.0</span>
 			</div>
 		</div>
 		<button type="button" id="mobileCloseBtn" class="navbar-btn">
-			<img src="images/close.png" alt="">
+			<img src="/template/images/close.png" alt="">
 		</button>
 	</nav>
 	
