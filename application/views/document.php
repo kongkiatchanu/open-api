@@ -58,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</ul>
 			</div>
 			<div class="sidebar-bottom">
-				<h6 class="name">Dustboy: Open APIs Docs</h6>
+				<h6 class="name">Dustboy Open APIs</h6>
 				<span class="ver-info">Version 1.0</span>
 			</div>
 		</div>
@@ -82,8 +82,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</button>
 					</div>
 					<div class="extra-nav">
-						<a href="javascript:void(0);" class="btn support-button">Buy Now</a>
-						<a target="_blank" href="https://w3meat-shop.dexignzone.com" class="btn support-button">Live Demo</a>
+						<a href="javascript:void(0);" class="btn support-button">Account</a>
+						<a target="_blank" href="https://www.cmuccdc.org" class="btn support-button">Website</a>
 					</div>
 				</div>
 			</nav>
