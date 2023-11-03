@@ -22,11 +22,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
 	
 	<!-- Bootstrap CSS CDN -->
-	<link rel="stylesheet" href="<?=base_url('template')?>plugins/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="<?=base_url('template')?>plugins/jstree/dist/themes/default/style.min.css">
-	<link rel="stylesheet" href="<?=base_url('template')?>plugins/perfect-scrollbar/css/perfect-scrollbar.css">
-	<link rel="stylesheet" href="<?=base_url('template')?>plugins/font-awesome/css/all.min.css">
-	<link rel="stylesheet" href="<?=base_url('template')?>css/style.css?v=1">
+	<link rel="stylesheet" href="<?=base_url('template')?>/plugins/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="<?=base_url('template')?>/plugins/jstree/dist/themes/default/style.min.css">
+	<link rel="stylesheet" href="<?=base_url('template')?>/plugins/perfect-scrollbar/css/perfect-scrollbar.css">
+	<link rel="stylesheet" href="<?=base_url('template')?>/plugins/font-awesome/css/all.min.css">
+	<link rel="stylesheet" href="<?=base_url('template')?>/css/style.css?v=1">
 	
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -714,10 +714,10 @@ npm run sass
 </div>
 
 <!-- JAVASCRIPT FILES ========================================= -->
-<script src="<?=base_url('template')?>js/jquery.min.js"></script>
-<script src="<?=base_url('template')?>plugins/bootstrap/bootstrap.min.js"></script>
-<script src="<?=base_url('template')?>plugins/jstree/dist/jstree.min.js"></script>
-<script src="<?=base_url('template')?>plugins/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="<?=base_url('template')?>/js/jquery.min.js"></script>
+<script src="<?=base_url('template')?>/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="<?=base_url('template')?>/plugins/jstree/dist/jstree.min.js"></script>
+<script src="<?=base_url('template')?>/plugins/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
 <script src="<?=base_url('template')?>/js/custom.js"></script>
 </body>
 </html>
