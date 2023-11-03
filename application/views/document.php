@@ -96,7 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<h1 class="title">Documentation</h1>
 					<div class="colored-line"></div>
 					<div class="section-description">
-						W3Meat: Meat Shop Mobile App Template
+						CMUCCDC: Fast And Easy-To-Work APIs
 					</div>
 					<div class="colored-line"></div>
 				</div>
