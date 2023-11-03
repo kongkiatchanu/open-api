@@ -1,3 +1,4 @@
+<?php 
 function redirect_ssl() {
     $CI =& get_instance();
     $class = $CI->router->fetch_class();
