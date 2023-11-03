@@ -107,10 +107,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<section class="app-brief introduction-wrapper text-center" id="introduction">
 			<div class="container center-align ">
 				<h2 class="title">CMUCCDC</h2>
-				<h4 class="sub-title">DustBoy: Climate Change Data Center</h4>
+				<h4 class="sub-title">ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ</h4>
 				<p>This documentation is last updated on 1 Jan 2024</p>
 				<div class="wishes-bx">
-					<p>Thank you for purchasing this HTML template.</p>
+					<p>Hi I'm DustBoy</p>
 					<p class="rating-text">Please, <a href="#">sign up</a> to use our fast and easy-to-work DustBoy APIs.</p>
 				</div>
 			</div>
