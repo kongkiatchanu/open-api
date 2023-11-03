@@ -106,12 +106,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<!-- Introduction -->
 		<section class="app-brief introduction-wrapper text-center" id="introduction">
 			<div class="container center-align ">
-				<h2 class="title">W3Meat</h2>
-				<h4 class="sub-title">W3Meat: Meat Shop Mobile App Template</h4>
-				<p>This documentation is last updated on 21 July 2023</p>
+				<h2 class="title">CMUCCDC</h2>
+				<h4 class="sub-title">DustBoy: Climate Change Data Center</h4>
+				<p>This documentation is last updated on 1 Jan 2024</p>
 				<div class="wishes-bx">
 					<p>Thank you for purchasing this HTML template.</p>
-					<p class="rating-text">If you like this template, Please support us by rating this template with <strong>5 stars</strong></p>
+					<p class="rating-text">Please, <a href="#">sign up</a> to use our fast and easy-to-work DustBoy APIs.</p>
 				</div>
 			</div>
 		</section>
