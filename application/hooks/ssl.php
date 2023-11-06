@@ -21,3 +21,5 @@ function force_ssl() {
         redirect("https://{$server}{$uri}");
     }
 }
+
+
