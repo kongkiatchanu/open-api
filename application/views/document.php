@@ -143,29 +143,39 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="content-bx">
 								<h5 class="title">Step 1 </h5>
 								<p>ลงทะเบียนเพื่อขอใช้งาน APIs</p>
-								<p>กรุณากรอกข้อมูลของท่าน ให้ถูกต้อง ได้แก่ ชื่อ, นามสกุล, หน่วยงาน,
-									วัตถุประสงค์การใช้ข้อมูลของท่าน, ข้อมูลติดต่อ</p>
 							</div>
 							<div class="content-bx">
 								<h5 class="title">Step 2</h5>
 								<p>การตรวจสอบข้อมูล</p>
-								<p>ทีมงานตรวจสอบข้อมูล หรือ ให้ยืนยันตัวตนผ่าน อีเมล์</p>
+
 							</div>
 							<div class="content-bx">
 								<h5 class="title">Step 3 </h5>
 								<p>การแจ้งเตือนการสมัคร</p>
-								<p>ให้แจ้งเตือนหลังจาก verify ข้อ 2 เสดแล้ว</p>
 							</div>
 						</div>
 						<div class="col-md-5 offet-md-1">
-						<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
+							<form action="" method="post">
+								<div class="mb-3">
+									<label for="access_name" class="form-label">ชื่อ - นามสกุล</label>
+									<input type="text" class="form-control" name="access_name">
+								</div>
+								<div class="mb-3">
+									<label for="access_org" class="form-label">หน่วยงาน/สังกัด</label>
+									<input type="text" class="form-control" name="access_org">
+								</div>
+								<div class="mb-3">
+									<label for="access_email" class="form-label">อีเมล์ติดต่อ</label>
+									<input type="email" class="form-control" name="access_email">
+								</div>
+								<div class="mb-3">
+									<label for="access_purpose" class="form-label">วัตถุประสงค์การใช้งาน</label>
+									<textarea class="form-control" name="access_purpose" rows="3"></textarea>
+								</div>
+								<div class="mb-3">
+									<button class="btn btn-primary">ลงทะเบียน</button>
+								</div>
+							</form>
 						</div>
 					</div>
 
