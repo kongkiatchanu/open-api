@@ -49,16 +49,17 @@ class Forecast extends REST_Controller
             }
         }
 
-        $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-
-        if ( ! $daily_forecast = $this->cache->get('daily_forecast'))
-        {
-            $this->cache->save('daily_forecast', $ar_data, 360);
+        if($ar_data!=null){
+            $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+            if ( ! $daily_forecast = $this->cache->get('daily_forecast'))
+            {
+                $this->cache->save('daily_forecast', $ar_data, 360);
+            }
         }
+        
+        $this->response($daily_forecast, 200);
 
-        echo '<pre>';
-        print_r($daily_forecast);
-        echo '</pre>';
+       
         
     }
 
