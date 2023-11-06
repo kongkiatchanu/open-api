@@ -51,7 +51,7 @@ class Forecast extends REST_Controller
 
         if($ar_data!=null){
             $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-            if ( ! $daily_forecast = $this->cache->get('daily_forecast'))
+            if ( ! $ar_data = $this->cache->get('daily_forecast'))
             {
                 //print_r($ar_data);  
                 $this->cache->save('daily_forecast', $ar_data, 360);
