@@ -136,7 +136,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					</div>
 
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-5">
 							<div class="content-bx">
 								<h5 class="title">Step 1 ลงทะเบียนเพื่อขอใช้งาน APIs</h5>
 								<p>กรุณากรอกข้อมูลตามแบบฟอร์มที่กำหนดให้ถูกต้อง ผู้ดูแลระบบสามารถลบบัญชีของท่านภายหลังได้ หากเห็นว่าข้อมูลที่ท่านสมัครมาไม่ถูกต้อง</p>
@@ -151,7 +151,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<p>ท่านสามารถเข้าสู่ระบบโดย อีเมล์ และ รหัสผ่าน ที่ท่านกำหนดตอนลงทะเบียน</p>
 							</div>
 						</div>
-						<div class="col-md-5 offet-md-1">
+						<div class="col-md-5 offset-md-2">
 							<form action="" method="post">
 								<div class="mb-3">
 									<label for="access_name" class="form-label">ชื่อ - นามสกุล</label>
