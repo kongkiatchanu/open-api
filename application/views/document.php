@@ -132,7 +132,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 			<hr>
 
-			<section class="app-brief introduction-wrapper text-center" id="account">
+			<section class="app-brief" id="account">
 				<div class="container left-align">
 					<div class="section-header">
 						<h2 class="dark-text title">ลงทะเบียนเพื่อขอใช้ APIs - </h2>
