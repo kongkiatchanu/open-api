@@ -26,22 +26,32 @@ class Forecast extends REST_Controller
         $json = file_get_contents($url);
         $obj = json_decode($json);
 
-        $today = strtotime(date('Y-m-d'));
-        $today_1 = date('Y-m-d', strtotime('+1 day', $today));
-        $today_2 = date('Y-m-d', strtotime('+2 day', $today));
-        $today_3 = date('Y-m-d', strtotime('+3 day', $today));
+        $today = date('Y-m-d');
+        $today_1 = date('Y-m-d', strtotime('+1 day', strtotime($today)));
+        $today_2 = date('Y-m-d', strtotime('+2 day', strtotime($today)));
+        $today_3 = date('Y-m-d', strtotime('+3 day', strtotime($today)));
         
-        echo $today;
-        echo $today_1;
-        echo $today_2;
-        echo $today_3;
+        $ar_data = array();
 
         if($obj->air_quality!=null){
             $data = $obj->air_quality;
             foreach($data as $k=>$v){
-
+                if($v->StationID!=0){
+                    if (in_array($v->StationID, $ar_data)){
+                        $ar_data[$v->StationID]['forecast'][$v->ForecastDate] = $v->PM25;
+                    }else{
+                        $ar_data[$v->StationID]['StationID']= $v->StationID;
+                        $ar_data[$v->StationID]['Latitude']= $v->Latitude;
+                        $ar_data[$v->StationID]['Longitude']= $v->Longitude;
+                        $ar_data[$v->StationID]['forecast'][$v->ForecastDate] = $v->PM25;
+                    }
+                }
             }
         }
+
+        echo '<pre>';
+        print_r($ar_data);
+        echo '</pre>';
        
 
 
