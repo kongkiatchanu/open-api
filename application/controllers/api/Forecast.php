@@ -29,9 +29,13 @@ class Forecast extends REST_Controller
         $json = file_get_contents($url);
         $obj = json_decode($json);
         
-        echo '<pre>';
-        print_r($obj);
-        echo '</pre>';
+        if($obj->air_quality!=null){
+            $data = $obj->air_quality;
+            echo '<pre>';
+            print_r($data);
+            echo '</pre>';
+        }
+       
 
 
 
