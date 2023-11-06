@@ -141,21 +141,31 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="row">
 						<div class="col-md-6">
 							<div class="content-bx">
-								<h5 class="title">1. ลงทะเบียนเพื่อขอใช้งาน APIs</h5>
+								<h5 class="title">Step 1 </h5>
+								<p>ลงทะเบียนเพื่อขอใช้งาน APIs</p>
 								<p>กรุณากรอกข้อมูลของท่าน ให้ถูกต้อง ได้แก่ ชื่อ, นามสกุล, หน่วยงาน,
 									วัตถุประสงค์การใช้ข้อมูลของท่าน, ข้อมูลติดต่อ</p>
 							</div>
 							<div class="content-bx">
-								<h5 class="title">2. การตรวจสอบข้อมูล</h5>
+								<h5 class="title">Step 2</h5>
+								<p>การตรวจสอบข้อมูล</p>
 								<p>ทีมงานตรวจสอบข้อมูล หรือ ให้ยืนยันตัวตนผ่าน อีเมล์</p>
 							</div>
 							<div class="content-bx">
-								<h5 class="title">3. การแจ้งเตือนการสมัคร</h5>
+								<h5 class="title">Step 3 </h5>
+								<p>การแจ้งเตือนการสมัคร</p>
 								<p>ให้แจ้งเตือนหลังจาก verify ข้อ 2 เสดแล้ว</p>
 							</div>
 						</div>
-						<div class="col-md-6">
-form
+						<div class="col-md-5 offet-md-1">
+						<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
 						</div>
 					</div>
 
