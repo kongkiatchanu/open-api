@@ -115,15 +115,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					<h2 class="title">ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ</h2>
 					<h4 class="sub-title">(Climate Change Data Center: CCDC) </h4>
-					<p >This documentation is last updated on 1 Jan 2024</p>
-					<p >ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ (Climate Change Data Center: CCDC)
+					<p>This documentation is last updated on 1 Jan 2024</p>
+					<p>ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ (Climate Change Data Center: CCDC)
 						มหาวิทยาลัยเชียงใหม่ (www.cmuccdc.org) ได้ดำเนินโครงการ
 						"เครือข่ายเฝ้าระวังและเตือนภัยวิกฤตหมอกควันภาคประชาชน (People AQI)"
 						ร่วมกับเครือข่ายติดตั้งเครื่องตรวจวัดคุณภาพอากาศ DustBoy
 						ภายใต้การสนับสนุนของสำนักงานการวิจัยแห่งชาติ (วช.) ในการติดตั้งเครื่องวัดฝุ่น "DustBoy" มากกว่า
 						400 จุด ทั่วประเทศ ทำให้สามารถแสดงข้อมูลคุณภาพอากาศได้ครอบคลุมทุกจังหวัดในประเทศไทย</p>
-					
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, nisi aliquam unde totam aut quam obcaecati doloremque placeat vel eos assumenda quibusdam quisquam perferendis perspiciatis voluptatum provident aperiam minima quas.</p>
+
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, nisi aliquam unde totam aut
+						quam obcaecati doloremque placeat vel eos assumenda quibusdam quisquam perferendis perspiciatis
+						voluptatum provident aperiam minima quas.</p>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta nobis quasi libero voluptates sit
+						sed in iure laborum perferendis magni similique quisquam nisi earum fuga, laboriosam corporis at
+						eligendi beatae!</p>
 				</div>
 			</section>
 
@@ -139,7 +145,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<div class="col-md-5">
 							<div class="content-bx">
 								<h5 class="title">Step 1 ลงทะเบียนเพื่อขอใช้งาน APIs</h5>
-								<p>กรุณากรอกข้อมูลตามแบบฟอร์มที่กำหนดให้ถูกต้อง ผู้ดูแลระบบสามารถลบบัญชีของท่านภายหลังได้ หากเห็นว่าข้อมูลที่ท่านสมัครมาไม่ถูกต้อง</p>
+								<p>กรุณากรอกข้อมูลตามแบบฟอร์มที่กำหนดให้ถูกต้อง
+									ผู้ดูแลระบบสามารถลบบัญชีของท่านภายหลังได้ หากเห็นว่าข้อมูลที่ท่านสมัครมาไม่ถูกต้อง
+								</p>
 							</div>
 							<div class="content-bx">
 								<h5 class="title">Step 2 ยืนยันอีเมล์</h5>
@@ -153,14 +161,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</div>
 						<div class="col-md-5 offset-md-2">
 							<form action="" method="post">
-								<div class="mb-3">
-									<label for="access_name" class="form-label">ชื่อ - นามสกุล</label>
-									<input type="text" class="form-control" name="access_name">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="mb-3">
+											<label for="access_name" class="form-label">ชื่อ - นามสกุล</label>
+											<input type="text" class="form-control" name="access_name">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="mb-3">
+											<label for="access_org" class="form-label">หน่วยงาน/สังกัด</label>
+											<input type="text" class="form-control" name="access_org">
+										</div>
+									</div>
 								</div>
-								<div class="mb-3">
-									<label for="access_org" class="form-label">หน่วยงาน/สังกัด</label>
-									<input type="text" class="form-control" name="access_org">
-								</div>
+
 								<div class="mb-3">
 									<label for="access_purpose" class="form-label">วัตถุประสงค์การใช้งาน</label>
 									<textarea class="form-control" name="access_purpose" rows="3"></textarea>
@@ -169,7 +184,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<label for="access_email" class="form-label">อีเมล์ติดต่อ</label>
 									<input type="email" class="form-control" name="access_email">
 								</div>
-								
+
 								<div class="row">
 									<div class="col-md-6">
 										<div class="mb-3">
@@ -184,7 +199,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="mb-3">
 									<button class="btn btn-primary">ลงทะเบียน</button>
 								</div>
