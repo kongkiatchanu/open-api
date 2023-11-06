@@ -201,7 +201,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								</div>
 
 								<div class="mb-3">
-									<button class="btn btn-primary">ลงทะเบียน</button>
+									<div class="d-grid gap-2">
+										<button class="btn btn-primary">ลงทะเบียน</button>
+									</div>
 								</div>
 							</form>
 						</div>
