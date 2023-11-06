@@ -58,8 +58,6 @@ class Forecast extends REST_Controller
 
         $this->response($daily_forecast, 200);
         
-        
-
     }
 
 }
