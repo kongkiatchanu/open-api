@@ -56,7 +56,9 @@ class Forecast extends REST_Controller
             $this->cache->save('daily_forecast', $daily_forecast, 360);
         }
 
-        $this->response($daily_forecast, 200);
+        echo '<pre>';
+        print_r($daily_forecast);
+        echo '</pre>';
         
     }
 
