@@ -38,23 +38,27 @@ class Forecast extends REST_Controller
             foreach($data as $k=>$v){
                 if($v->StationID!=0){
                     if (in_array($v->StationID, $ar_data)){
-                        $ar_data[$v->StationID]['forecast'][$v->ForecastDate] = $v->PM25;
+                        $ar_data[$v->StationID]['Forecast'][$v->ForecastDate] = $v->PM25;
                     }else{
                         $ar_data[$v->StationID]['StationID']= $v->StationID;
                         $ar_data[$v->StationID]['Latitude']= $v->Latitude;
                         $ar_data[$v->StationID]['Longitude']= $v->Longitude;
-                        $ar_data[$v->StationID]['forecast'][$v->ForecastDate] = $v->PM25;
+                        $ar_data[$v->StationID]['Forecast'][$v->ForecastDate] = $v->PM25;
                     }
                 }
             }
         }
 
-        echo '<pre>';
-        print_r($ar_data);
-        echo '</pre>';
-       
+        $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
 
+        if ( ! $daily_forecast = $this->cache->get('daily_forecast'))
+        {
+            $this->cache->save('daily_forecast', $daily_forecast, 360);
+        }
 
+        $this->response($daily_forecast, 200);
+        
+        
 
     }
 
