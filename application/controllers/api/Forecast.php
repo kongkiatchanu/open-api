@@ -24,5 +24,17 @@ class Forecast extends REST_Controller
         $this->response($data, 200);
     }
 
+    public function daily_get(){
+        $url = 'https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily';
+        $json = file_get_contents($url);
+        $obj = json_decode($json);
+        
+        echo '<pre>';
+        print_r($obj);
+        echo '</pre>';
+
+
+
+    }
 
 }
