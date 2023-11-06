@@ -45,12 +45,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div class="nav-bar deznav-scroll">
 				<ul class="list-unstyled components navbar-nav nav" id="download-button">
-					<li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
-					<li class="nav-item"><a class="nav-link" href="#apikey">API KEY</a></li>
-					<li class="nav-item"><a class="nav-link" href="#station_list">stations</a></li>
-					<li class="nav-item"><a class="nav-link" href="#station_region">region</a></li>
-					<li class="nav-item"><a class="nav-link" href="#station_current">current</a></li>
-					<li class="nav-item"><a class="nav-link" href="#station_detail">details</a></li>
+					<li class="nav-item"><a class="nav-link" href="#introduction">CCDC</a></li>
+					<li class="nav-item"><a class="nav-link" href="#aqiinfo">AQI Index</a></li>
+					<li class="nav-item"><a class="nav-link" href="#apikey">How to</a></li>
+					<li class="nav-item"><a class="nav-link" href="#model">DustBoy Model</a></li>
+					<li class="nav-item"><a class="nav-link" href="#station">Stations</a></a></li>
+					<li class="nav-item"><a class="nav-link" href="#value">DustBoy Values</a></a></li>
+					<li class="nav-item"><a class="nav-link" href="#forecast">Forecast</a></li>
+					<li class="nav-item"><a class="nav-link" href="#hotspot">Hotspot</a></li>
+					<li class="nav-item"><a class="nav-link" href="#snapshot">Snapshot</a></li>
 
 				</ul>
 			</div>
