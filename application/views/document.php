@@ -135,12 +135,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			<section class="app-brief" id="account">
 				<div class="container left-align">
 					<div class="section-header">
-						<h2 class="dark-text title">ลงทะเบียนเพื่อขอใช้ APIs - </h2>
+						<h2 class="dark-text title">บัญชีผู้ใช้</h2>
 					</div>
 
 					<div class="content-bx">
-						<h5 class="title">Dark Theme</h5>
-						<pre class="brush: javascript; h-100">&lt;body class="theme-dark"&gt;</pre>
+						<h5 class="title">1. ลงทะเบียนเพื่อขอใช้งาน APIs</h5>
+						<p>กรุณากรอกข้อมูลของท่าน ให้ถูกต้อง ได้แก่ ชื่อ, นามสกุล, หน่วยงาน, วัตถุประสงค์การใช้ข้อมูลของท่าน, ข้อมูลติดต่อ</p>
+
+						<h5 class="title">2. การตรวจสอบข้อมูล</h5>
+						<p>ทีมงานตรวจสอบข้อมูล หรือ ให้ยืนยันตัวตนผ่าน อีเมล์</p>
+
+						<h5 class="title">3. การแจ้งเตือนการสมัคร</h5>
+						<p>ให้แจ้งเตือนหลังจาก verify ข้อ 2 เสดแล้ว</p>
 					</div>
 				</div>
 			</section>
