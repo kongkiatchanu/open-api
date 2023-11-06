@@ -6,7 +6,7 @@ require APPPATH . 'libraries/REST_Controller.php';
 //https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily
 //https://rcces.soc.cmu.ac.th:1443/pm25/v1/getHourly
 
-class Forcast extends REST_Controller
+class Forecast extends REST_Controller
 {
     function __construct()
     {
