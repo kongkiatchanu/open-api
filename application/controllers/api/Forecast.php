@@ -53,7 +53,7 @@ class Forecast extends REST_Controller
 
         if ( ! $daily_forecast = $this->cache->get('daily_forecast'))
         {
-            $this->cache->save('daily_forecast', $daily_forecast, 360);
+            $this->cache->save('daily_forecast', $ar_data, 360);
         }
 
         echo '<pre>';
