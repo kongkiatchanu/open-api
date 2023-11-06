@@ -161,17 +161,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</div>
 						</div>
 						<div class="col-md-5 offset-md-2">
-							<div class="accordion" id="accordionPanelsStayOpenExample">
+
+							<div class="accordion accordion-flush" id="accordionFlushExample">
 								<div class="accordion-item">
-									<h2 class="accordion-header" id="panelsStayOpen-headingOne">
-										<button class="accordion-button" type="button" data-bs-toggle="collapse"
-											data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-											aria-controls="panelsStayOpen-collapseOne">
+									<h2 class="accordion-header" id="flush-headingOne">
+										<button class="accordion-button collapsed" type="button"
+											data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+											aria-expanded="false" aria-controls="flush-collapseOne">
 											ลงทะเบียน
 										</button>
 									</h2>
-									<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-										aria-labelledby="panelsStayOpen-headingOne">
+									<div id="flush-collapseOne" class="accordion-collapse collapse"
+										aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
 										<div class="accordion-body">
 											<form action="" method="post">
 												<div class="row">
@@ -231,29 +232,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</div>
 								</div>
 								<div class="accordion-item">
-									<h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+									<h2 class="accordion-header" id="flush-headingTwo">
 										<button class="accordion-button collapsed" type="button"
-											data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
-											aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+											data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+											aria-expanded="false" aria-controls="flush-collapseTwo">
 											เข้าสู่ระบบ
 										</button>
 									</h2>
-									<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-										aria-labelledby="panelsStayOpen-headingTwo">
-										<div class="accordion-body">
-											<strong>This is the second item's accordion body.</strong> It is hidden by
-											default, until the collapse plugin adds the appropriate classes that we use
-											to style each element. These classes control the overall appearance, as well
-											as the showing and hiding via CSS transitions. You can modify any of this
-											with custom CSS or overriding our default variables. It's also worth noting
-											that just about any HTML can go within the <code>.accordion-body</code>,
-											though the transition does limit overflow.
-										</div>
+									<div id="flush-collapseTwo" class="accordion-collapse collapse"
+										aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+										<div class="accordion-body">///</div>
 									</div>
 								</div>
 
 							</div>
 
+							
 						</div>
 					</div>
 
