@@ -141,17 +141,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="row">
 						<div class="col-md-6">
 							<div class="content-bx">
-								<h5 class="title">Step 1 </h5>
-								<p>ลงทะเบียนเพื่อขอใช้งาน APIs</p>
+								<h5 class="title">Step 1 ลงทะเบียนเพื่อขอใช้งาน APIs</h5>
+								<p>กรุณากรอกข้อมูลตามแบบฟอร์มที่กำหนดให้ถูกต้อง ผู้ดูแลระบบสามารถลบบัญชีของท่านภายหลังได้ หากเห็นว่าข้อมูลที่ท่านสมัครมาไม่ถูกต้อง</p>
 							</div>
 							<div class="content-bx">
-								<h5 class="title">Step 2</h5>
-								<p>การตรวจสอบข้อมูล</p>
+								<h5 class="title">Step 2 ยืนยันอีเมล์</h5>
+								<p>ระบบจะส่งอีเมล์ให้ท่านยืนยันการสมัคร</p>
 
 							</div>
 							<div class="content-bx">
-								<h5 class="title">Step 3 </h5>
-								<p>การแจ้งเตือนการสมัคร</p>
+								<h5 class="title">Step 3 เข้าสู่ระบบเพื่อใช้งาน</h5>
+								<p>ท่านสามารถเข้าสู่ระบบโดย อีเมล์ และ รหัสผ่าน ที่ท่านกำหนดตอนลงทะเบียน</p>
 							</div>
 						</div>
 						<div class="col-md-5 offet-md-1">
@@ -165,13 +165,29 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<input type="text" class="form-control" name="access_org">
 								</div>
 								<div class="mb-3">
-									<label for="access_email" class="form-label">อีเมล์ติดต่อ</label>
-									<input type="email" class="form-control" name="access_email">
-								</div>
-								<div class="mb-3">
 									<label for="access_purpose" class="form-label">วัตถุประสงค์การใช้งาน</label>
 									<textarea class="form-control" name="access_purpose" rows="3"></textarea>
 								</div>
+								<div class="mb-3">
+									<label for="access_email" class="form-label">อีเมล์ติดต่อ</label>
+									<input type="email" class="form-control" name="access_email">
+								</div>
+								
+								<div class="row">
+									<div class="col-md-6">
+										<div class="mb-3">
+											<label for="access_password" class="form-label">รหัสผ่าน</label>
+											<input type="password" class="form-control" name="access_password">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="mb-3">
+											<label for="access_password_c" class="form-label">ยืนยันรหัสผ่าน</label>
+											<input type="password" class="form-control" name="access_password_c">
+										</div>
+									</div>
+								</div>
+								
 								<div class="mb-3">
 									<button class="btn btn-primary">ลงทะเบียน</button>
 								</div>
