@@ -161,90 +161,99 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</div>
 						</div>
 						<div class="col-md-5 offset-md-2">
-						<div class="accordion" id="accordionPanelsStayOpenExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-        Accordion Item #1
-      </button>
-    </h2>
-    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-      <div class="accordion-body">
-        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-      <div class="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-      <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-</div>
-							<form action="" method="post">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="mb-3">
-											<label for="access_name" class="form-label">ชื่อ - นามสกุล</label>
-											<input type="text" class="form-control" name="access_name">
+							<div class="accordion" id="accordionPanelsStayOpenExample">
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="panelsStayOpen-headingOne">
+										<button class="accordion-button" type="button" data-bs-toggle="collapse"
+											data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+											aria-controls="panelsStayOpen-collapseOne">
+											ลงทะเบียน
+										</button>
+									</h2>
+									<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+										aria-labelledby="panelsStayOpen-headingOne">
+										<div class="accordion-body">
+											<form action="" method="post">
+												<div class="row">
+													<div class="col-md-6">
+														<div class="mb-3">
+															<label for="access_name" class="form-label">ชื่อ -
+																นามสกุล</label>
+															<input type="text" class="form-control" name="access_name">
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="mb-3">
+															<label for="access_org"
+																class="form-label">หน่วยงาน/สังกัด</label>
+															<input type="text" class="form-control" name="access_org">
+														</div>
+													</div>
+												</div>
+
+												<div class="mb-3">
+													<label for="access_purpose"
+														class="form-label">วัตถุประสงค์การใช้งาน</label>
+													<textarea class="form-control" name="access_purpose"
+														rows="3"></textarea>
+												</div>
+												<div class="mb-3">
+													<label for="access_email" class="form-label">อีเมล์ติดต่อ</label>
+													<input type="email" class="form-control" name="access_email">
+												</div>
+
+												<div class="row">
+													<div class="col-md-6">
+														<div class="mb-3">
+															<label for="access_password"
+																class="form-label">รหัสผ่าน</label>
+															<input type="password" class="form-control"
+																name="access_password">
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="mb-3">
+															<label for="access_password_c"
+																class="form-label">ยืนยันรหัสผ่าน</label>
+															<input type="password" class="form-control"
+																name="access_password_c">
+														</div>
+													</div>
+												</div>
+
+												<div class="mb-3">
+													<div class="d-grid gap-2">
+														<button class="btn btn-primary">ลงทะเบียน</button>
+													</div>
+												</div>
+											</form>
 										</div>
 									</div>
-									<div class="col-md-6">
-										<div class="mb-3">
-											<label for="access_org" class="form-label">หน่วยงาน/สังกัด</label>
-											<input type="text" class="form-control" name="access_org">
+								</div>
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+										<button class="accordion-button collapsed" type="button"
+											data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
+											aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+											เข้าสู่ระบบ
+										</button>
+									</h2>
+									<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+										aria-labelledby="panelsStayOpen-headingTwo">
+										<div class="accordion-body">
+											<strong>This is the second item's accordion body.</strong> It is hidden by
+											default, until the collapse plugin adds the appropriate classes that we use
+											to style each element. These classes control the overall appearance, as well
+											as the showing and hiding via CSS transitions. You can modify any of this
+											with custom CSS or overriding our default variables. It's also worth noting
+											that just about any HTML can go within the <code>.accordion-body</code>,
+											though the transition does limit overflow.
 										</div>
 									</div>
 								</div>
 
-								<div class="mb-3">
-									<label for="access_purpose" class="form-label">วัตถุประสงค์การใช้งาน</label>
-									<textarea class="form-control" name="access_purpose" rows="3"></textarea>
-								</div>
-								<div class="mb-3">
-									<label for="access_email" class="form-label">อีเมล์ติดต่อ</label>
-									<input type="email" class="form-control" name="access_email">
-								</div>
+							</div>
 
-								<div class="row">
-									<div class="col-md-6">
-										<div class="mb-3">
-											<label for="access_password" class="form-label">รหัสผ่าน</label>
-											<input type="password" class="form-control" name="access_password">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="mb-3">
-											<label for="access_password_c" class="form-label">ยืนยันรหัสผ่าน</label>
-											<input type="password" class="form-control" name="access_password_c">
-										</div>
-									</div>
-								</div>
-
-								<div class="mb-3">
-									<div class="d-grid gap-2">
-										<button class="btn btn-primary">ลงทะเบียน</button>
-									</div>
-								</div>
-							</form>
 						</div>
 					</div>
 
