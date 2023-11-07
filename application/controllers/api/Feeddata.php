@@ -282,6 +282,7 @@ class Feeddata extends REST_Controller
     }
 
 	public function hourly_get(){
+		set_time_limit(0);
 		$url = 'https://rcces.soc.cmu.ac.th:1443/pm25/v1/getHourly';
 		$json = file_get_contents($url);
 		$obj = json_decode($json);
