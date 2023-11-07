@@ -213,6 +213,43 @@ class Feeddata extends REST_Controller
 		return $stations_data;
 	}
 
+	function getStationMaemoh(){
+		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+		if (!$stations_data = $this->cache->get('stations_mm')) {
+			$data = array();
+			$rsStation = json_decode(file_get_contents('https://maemoh.3e.world/json/stations.json'));
+			foreach($rsStation as $item){
+				$ar_push = array(
+					'id'	=> $item->id,
+					'code'	=> $item->dustboy_id,
+					'url'	=> $item->dustboy_uri,
+					'name_th'	=> $item->dustboy_name,
+					'name_en'	=> $item->dustboy_name_en,
+					'latitude'	=> $item->dustboy_lat,
+					'longitude'	=> $item->dustboy_lon,
+					'pm25'			=> $item->pm25,
+					'color'				=> $item->th_color,
+					'icon'				=> $item->th_dustboy_icon,
+					'title'				=> $item->th_title,
+					'caption'			=> $item->th_caption,
+					'aqi'				=> $item->th_aqi,
+					'pm10'			=> $item->pm10,
+					'ws'			=> $item->wind_speed,
+					'wd'			=> $item->wind_direction,
+					'atm'			=> $item->atmospheric,
+					'temp'			=> $item->temp,
+					'humid'			=> $item->humid,
+					'updatetime'	=> $item->log_datetime
+				);
+				array_push($data, $ar_push);	
+				
+			}
+			$this->cache->save('stations_mm', $data, 300);
+            $stations_data = $data;
+		}
+		return $stations_data;
+	}
+
     function forecast_daily()
     {
         $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
@@ -282,17 +319,16 @@ class Feeddata extends REST_Controller
     }
 
 	public function maemoh_get(){
-
-		$url = 'https://maemoh.3e.world/json/stations.json';
-		$json = file_get_contents($url);
-		$obj = json_decode($json);
+		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+		$stations_data = $this->getStationMaemoh();
+		$daily_data = $this->forecast_daily();
 
 		echo '<pre>';
-		print_r($obj);
+		print_r($stations_data);
 		echo '</pre>';
 		
 	}
-	
+
 	public function hourly_get(){
 		ini_set("memory_limit","64M");
 		set_time_limit(0);
