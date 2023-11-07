@@ -297,17 +297,17 @@ class Feeddata extends REST_Controller
 						array_push($ar_forcast, $forecast_item);
 					}
 
-				echo '<pre>';
-				print_r($forecast_item);
-				echo '</pre>';
-				exit;
-				 }
+					echo '<pre>';
+					print_r($ar_forcast);
+					echo '</pre>';
+					exit;
+				}
 				
 			}
 
 
 			$item['forecast'] = $ar_forcast;
-			array_push($data, $forecast_item);
+			array_push($data, $item);
 		}
 
 		echo '<pre>';
