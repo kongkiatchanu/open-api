@@ -213,6 +213,17 @@ class Feeddata extends REST_Controller
 		return $stations_data;
 	}
 
+	function getStationMaemoh(){
+
+		$url = 'https://maemoh.3e.world/json/stations.json';
+		$json = file_get_contents($url);
+		$obj = json_decode($json);
+
+		echo '<pre>';
+		print_r($obj);
+		echo '</pre>';
+		
+	}
     function forecast_daily()
     {
         $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
