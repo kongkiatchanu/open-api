@@ -274,27 +274,34 @@ class Feeddata extends REST_Controller
 
 			$ar_forcast = array();
 			foreach($rsDay->air_quality as $forecast_item){
-				if((float)$forecast_item->Latitude==(float)$item['latitude'] && (float)$forecast_item->Longitude==(float)$item['longitude']){
-					$forecast_item->color = $this->getIndexInfo($forecast_item->PM25, 'color')['color'];
-					$forecast_item->icon = $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'];
-					$forecast_item->PM25 = ceil($forecast_item->PM25);
 
-					if($ar_forcast!=null){
-						$ck_exits = 0;
-						foreach($ar_forcast as $ck_loop){
-							if($ck_loop->ForecastDate==$forecast_item->ForecastDate){
-								$ck_exits=1;
-							}
-						}
-						if($ck_exits==0){
-							array_push($ar_forcast,$forecast_item);
-						}
-					}else{
-						array_push($ar_forcast, $forecast_item);
-					}
-				}
+				echo '<pre>';
+				print_r($forecast_item);
+				echo '</pre>';
+				exit;
+				// if((float)$forecast_item->Latitude==(float)$item['latitude'] && (float)$forecast_item->Longitude==(float)$item['longitude']){
+				// 	$forecast_item->color = $this->getIndexInfo($forecast_item->PM25, 'color')['color'];
+				// 	$forecast_item->icon = $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'];
+				// 	$forecast_item->PM25 = ceil($forecast_item->PM25);
+
+				// 	if($ar_forcast!=null){
+				// 		$ck_exits = 0;
+				// 		foreach($ar_forcast as $ck_loop){
+				// 			if($ck_loop->ForecastDate==$forecast_item->ForecastDate){
+				// 				$ck_exits=1;
+				// 			}
+				// 		}
+				// 		if($ck_exits==0){
+				// 			array_push($ar_forcast,$forecast_item);
+				// 		}
+				// 	}else{
+				// 		array_push($ar_forcast, $forecast_item);
+				// 	}
+				// }
 				
 			}
+
+
 			$item['forecast'] = $ar_forcast;
 			array_push($data, $forecast_item);
 		}
