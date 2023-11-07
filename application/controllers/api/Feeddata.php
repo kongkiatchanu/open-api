@@ -214,9 +214,12 @@ class Feeddata extends REST_Controller
 
     public function hourly_get(){
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-        $rs = $this->cache->get('stations');
+		if (!$stations_data = $this->cache->get('stations')) {
 
-		print_r($rs);
+		}
+       
+
+		print_r($stations_data);
 
     }
 
