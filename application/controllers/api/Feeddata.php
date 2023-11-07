@@ -214,12 +214,10 @@ class Feeddata extends REST_Controller
 
     public function hourly_get(){
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-		if (!$stations_data = $this->cache->get('stations')) {
+		$stations_data = $this->cache->get('stations');
+		$daily_forecast = $this->cache->get('daily_forecast');
 
-		}
-       
-
-		print_r($stations_data);
+		print_r($daily_forecast);
 
     }
 
