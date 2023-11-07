@@ -23,6 +23,7 @@ class Feeddata extends REST_Controller
         $this->response($data, 200);
     }
 
+
     function standard_api($val, $type)
 	{
 		$point = 0;
@@ -149,6 +150,48 @@ class Feeddata extends REST_Controller
 			$data['th_caption'] = $ar_caption[$point];
 
 			return $data;
+		}
+	}
+
+	function cron_hotspot_get(){
+		$url = array( 1=>
+			"https://api.anurakplatform.com/activefire/MODIS_C6_1/",
+			"https://api.anurakplatform.com/activefire/SUOMI_VIIRS_C2/",
+			"https://api.anurakplatform.com/activefire/J1_VIIRS_C2/"
+		);
+		
+		$times = array( 1=>
+			"24h",
+			//"48h",
+			//"7d"
+		);
+		
+		$sensor = array( 1=> "TERAA/AQUA", 2=> "S-NPP", 3=>"NOAA-20");
+		$data = array();
+		foreach($url as $k=>$item){
+			
+			
+			foreach($times as $t=>$v){
+				
+				$full_url = $url[$k].'/'.$v;
+				$rs = json_decode(file_get_contents($full_url));
+				foreach($rs->features as $list){
+					$ar_post = (array)$list->properties;
+					$ar_post['source'] = $sensor[$k];
+					
+					if($ar_post['tb_idn']!=0){
+						$this->web_model->insertHotspot($ar_post);
+						
+						$query = $this->db->select('id')->get_where('hospots', array('source'=>$ar_post['source'], 'latitude'=>$ar_post['latitude'], 'longitude'=>$ar_post['longitude'], 'acq_time_lmt'=>$ar_post['acq_time_lmt']));
+						$rs = $query->result();
+						if($rs==null){
+							$this->db->insert('hospots' ,$ar_post);
+							return $this->db->insert_id();
+						}
+					}
+					
+				}
+			}
 		}
 	}
 
