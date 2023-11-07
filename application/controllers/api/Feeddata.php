@@ -227,6 +227,7 @@ class Feeddata extends REST_Controller
 
 		$stations_data = $this->getStation();
 		$daily_data = $this->forecast_daily();
+		echo '1';
 		echo '<pre>';
 		print_r($daily_data);
 		echo '</pre>';
