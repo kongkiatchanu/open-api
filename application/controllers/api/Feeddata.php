@@ -176,7 +176,7 @@ class Feeddata extends REST_Controller
 		
 	}
 
-	public function getStation(){
+	function getStation(){
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
 		if (!$stations_data = $this->cache->get('stations')) {
 			$data = array();
@@ -208,40 +208,29 @@ class Feeddata extends REST_Controller
 		return $stations_data;
 	}
 
-    public function forecast_daily_get()
+    function forecast_daily()
     {
         $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
         if (!$daily_data = $this->cache->get('daily_forecast')) {
             $url = 'https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily';
             $json = file_get_contents($url);
-            $obj = json_decode($json);
-            $ar_data = array();
-
-            if ($obj->air_quality != null) {
-                $data = $obj->air_quality;
-                foreach ($data as $k => $v) {
-                    if ($v->StationID != 0) {
-                        if (in_array($v->StationID, $ar_data)) {
-                            $ar_data[$v->StationID]['Forecast'][$v->ForecastDate] = $v->PM25;
-                        } else {
-                            $ar_data[$v->StationID]['StationID'] = $v->StationID;
-                            $ar_data[$v->StationID]['Latitude'] = $v->Latitude;
-                            $ar_data[$v->StationID]['Longitude'] = $v->Longitude;
-                            $ar_data[$v->StationID]['Forecast'][$v->ForecastDate] = $v->PM25;
-                        }
-                    }
-                }
-            }
-            $this->cache->save('daily_forecast', $ar_data, 360);
-            $daily_data = $ar_data;
+            //$obj = json_decode($json);
+            
+            $this->cache->save('daily_forecast', $json, 360);
+            $daily_data = $json;
         }
-        $this->response($daily_data, 200);
+       	return $json;
     }
 
     public function stations_daily_forecast_get(){
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
 
 		$stations_data = $this->getStation();
+		$daily_data = $this->forecast_daily();
+		echo '<pre>';
+		print_r($daily_data);
+		echo '</pre>';
+		exit;
 		$rsDay = json_decode(file_get_contents('https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily'));
 		
 		$data = array();
@@ -258,9 +247,9 @@ class Feeddata extends REST_Controller
 					$forecast_item->PM25 = ceil($forecast_item->PM25);
 
 					$ar_item = array(
-						'color' => $this->getIndexInfo($forecast_item->PM25, 'color')['color'],
+						//'color' => $this->getIndexInfo($forecast_item->PM25, 'color')['color'],
 						'pm25'	=> ceil($forecast_item->PM25),
-						'icon'	=> $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'],
+						//'icon'	=> $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'],
 						'forecastDate'	=> $forecast_item->ForecastDate
 					);				
 					if($ar_forcast!=null){
