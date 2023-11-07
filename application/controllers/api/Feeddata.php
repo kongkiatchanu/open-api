@@ -246,7 +246,7 @@ class Feeddata extends REST_Controller
 				array_push($data, $ar_push);	
 				
 			}
-			$this->cache->save('stations_mm', $data, 1);
+			$this->cache->save('stations_mm', $data, 60*15);
             $stations_data = $data;
 		}
 		return $stations_data;
@@ -255,12 +255,12 @@ class Feeddata extends REST_Controller
     function forecast_daily()
     {
         $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-        if (!$daily_data = $this->cache->get('daily_forecast4day')) {
+        if (!$daily_data = $this->cache->get('daily_forecast7day')) {
             $url = 'https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily';
             $json = file_get_contents($url);
         	$obj = json_decode($json);
             
-            $this->cache->save('daily_forecast4day',$obj, 1);
+            $this->cache->save('daily_forecast7day',$obj, 60*60*3);
             $daily_data = $obj;
         }
        	return $daily_data;
@@ -312,7 +312,7 @@ class Feeddata extends REST_Controller
 				$item['forecast'] = $ar_forcast;
 				array_push($data, $item);
 			}
-			$this->cache->save('stations_daily_forecast7',$data, 1);
+			$this->cache->save('stations_daily_forecast7',$data, 60*15);
             $stations_daily_forecast = $data;
 		}
 
@@ -363,7 +363,7 @@ class Feeddata extends REST_Controller
 				$item['forecast'] = $ar_forcast;
 				array_push($data, $item);
 			}
-			$this->cache->save('stations_maemoh',$data, 1);
+			$this->cache->save('stations_maemoh',$data, 60*15);
             $stations_maemoh = $data;
 		}
 
