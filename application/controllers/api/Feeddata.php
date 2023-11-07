@@ -240,7 +240,33 @@ class Feeddata extends REST_Controller
 
     public function hourly_get(){
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-		$stations_data = $this->cache->get('stations');
+		if (!$stations_data = $this->cache->get('stations')) {
+			$data = array();
+			$rsStation = json_decode(file_get_contents('https://www-old.cmuccdc.org/assets/api/haze/pwa/json/stations_temp.json'));
+			foreach($rsStation as $item){
+				$ar_push = array(
+					'id'	=> $item->id,
+					'code'	=> $item->dustboy_id,
+					'url'	=> $item->dustboy_uri,
+					'name_th'	=> $item->dustboy_name,
+					'name_en'	=> $item->dustboy_name_en,
+					'latitude'	=> $item->dustboy_lat,
+					'longitude'	=> $item->dustboy_lon,
+					'pm10'			=> $item->pm10,
+					'pm25'			=> $item->pm25,
+					'ws'			=> $item->wind_speed,
+					'wd'			=> $item->wind_direction,
+					'atm'			=> $item->atmospheric,
+					'temp'			=> $item->temp,
+					'humid'			=> $item->humid,
+					'updatetime'	=> $item->log_datetime
+				);
+				array_push($data, $ar_push);	
+				
+			}
+			$this->cache->save('stations', $data, 360);
+            $stations_data = $data;
+		}
 		$rsDay = json_decode(file_get_contents('https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily'));
 		
 		$data = array();
