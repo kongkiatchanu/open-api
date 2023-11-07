@@ -24,7 +24,8 @@ class Forecast extends REST_Controller
     public function daily_get()
     {
         $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-        if (!$daily_forecast = $this->cache->get('daily_forecast')) {
+       
+        if (!$daily_data = $this->cache->get('daily_forecast')) {
             $url = 'https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily';
             $json = file_get_contents($url);
             $obj = json_decode($json);
@@ -46,13 +47,9 @@ class Forecast extends REST_Controller
                 }
             }
             $this->cache->save('daily_forecast', $ar_data, 360);
+            $daily_data = $ar_data;
         }
-
-
-        $this->response($daily_forecast, 200);
-
-
-
+        $this->response($daily_data, 200);
     }
 
 }
