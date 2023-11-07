@@ -13,8 +13,6 @@ class Docs extends REST_Controller
         $this->methods['index_get']['limit'] = 50; // 500 requests per hour per user/key
     }
 
-
-
     public function index_get()
     {
         $data = array(
