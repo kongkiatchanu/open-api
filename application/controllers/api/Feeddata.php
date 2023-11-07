@@ -185,7 +185,6 @@ class Feeddata extends REST_Controller
     public function forecast_daily_get()
     {
         $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-       
         if (!$daily_data = $this->cache->get('daily_forecast')) {
             $url = 'https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily';
             $json = file_get_contents($url);
@@ -214,14 +213,10 @@ class Feeddata extends REST_Controller
     }
 
     public function hourly_get(){
-        set_time_limit(0);
-        $url = 'https://rcces.soc.cmu.ac.th:1443/pm25/v1/getHourly';
-        $json = file_get_contents($url);
-        $obj = json_decode($json);
+		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+        $rs = $this->cache->get('stations');
 
-        echo '<pre>';
-        print_r($obj);
-        echo '</pre>';
+		print_r($rs);
 
     }
 
