@@ -213,17 +213,6 @@ class Feeddata extends REST_Controller
 		return $stations_data;
 	}
 
-	public function maemoh_get(){
-
-		$url = 'https://maemoh.3e.world/json/stations.json';
-		$json = file_get_contents($url);
-		$obj = json_decode($json);
-
-		echo '<pre>';
-		print_r($obj);
-		echo '</pre>';
-		
-	}
     function forecast_daily()
     {
         $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
@@ -292,6 +281,18 @@ class Feeddata extends REST_Controller
 
     }
 
+	public function maemoh_get(){
+
+		$url = 'https://maemoh.3e.world/json/stations.json';
+		$json = file_get_contents($url);
+		$obj = json_decode($json);
+
+		echo '<pre>';
+		print_r($obj);
+		echo '</pre>';
+		
+	}
+	
 	public function hourly_get(){
 		ini_set("memory_limit","64M");
 		set_time_limit(0);
