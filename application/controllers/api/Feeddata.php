@@ -273,7 +273,7 @@ class Feeddata extends REST_Controller
 		foreach($stations_data as $item){
 			$ar_forcast = array();
 			foreach($rsDay->air_quality as $forecast_item){
-				if((float)$forecast_item->Latitude==(float)$item->Latitude && (float)$forecast_item->Longitude==(float)$item->Longitude){
+				if((float)$forecast_item->Latitude==(float)$item['Latitude'] && (float)$forecast_item->Longitude==(float)$item['Longitude']){
 					$forecast_item->color = $this->getIndexInfo($forecast_item->PM25, 'color')['color'];
 					$forecast_item->icon = $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'];
 					$forecast_item->PM25 = ceil($forecast_item->PM25);
