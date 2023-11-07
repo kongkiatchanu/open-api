@@ -246,7 +246,7 @@ class Feeddata extends REST_Controller
 				array_push($data, $ar_push);	
 				
 			}
-			$this->cache->save('stations_mm', $data, 300);
+			$this->cache->save('stations_mm', $data, 1);
             $stations_data = $data;
 		}
 		return $stations_data;
@@ -260,7 +260,7 @@ class Feeddata extends REST_Controller
             $json = file_get_contents($url);
         	$obj = json_decode($json);
             
-            $this->cache->save('daily_forecast',$obj, (60*60*3));
+            $this->cache->save('daily_forecast',$obj, 1);
             $daily_data = $obj;
         }
        	return $daily_data;
@@ -312,7 +312,7 @@ class Feeddata extends REST_Controller
 				$item['forecast'] = $ar_forcast;
 				array_push($data, $item);
 			}
-			$this->cache->save('stations_daily_forecast',$data, (60*1));
+			$this->cache->save('stations_daily_forecast',$data, 1);
             $stations_daily_forecast = $data;
 		}
 
@@ -363,7 +363,7 @@ class Feeddata extends REST_Controller
 				$item['forecast'] = $ar_forcast;
 				array_push($data, $item);
 			}
-			$this->cache->save('stations_maemoh',$data, (60*1));
+			$this->cache->save('stations_maemoh',$data, 1);
             $stations_maemoh = $data;
 		}
 
