@@ -213,7 +213,7 @@ class Feeddata extends REST_Controller
 		return $stations_data;
 	}
 
-	function getStationMaemoh(){
+	public function maemoh_get(){
 
 		$url = 'https://maemoh.3e.world/json/stations.json';
 		$json = file_get_contents($url);
