@@ -217,9 +217,9 @@ class Feeddata extends REST_Controller
         	$obj = json_decode($json);
             
             $this->cache->save('daily_forecast', json_encode($obj), 0);
-            $daily_data = $json;
+            $daily_data = json_encode($obj);
         }
-       	return json_encode($obj);
+       	return json_encode($daily_data);
     }
 
     public function stations_daily_forecast_get(){
