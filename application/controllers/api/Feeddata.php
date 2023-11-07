@@ -232,7 +232,7 @@ class Feeddata extends REST_Controller
 		$stations_data = $this->getStation();
 		$daily_data = $this->forecast_daily();
 		
-		if (!$stations_daily_forecast = $this->cache->get('stations_daily_forecast')) {
+		if (!$stations_daily_forecast = $this->cache->get('stations_daily_forecast2')) {
 			$data = array();
 			foreach($stations_data as $item){
 	
@@ -273,7 +273,7 @@ class Feeddata extends REST_Controller
 				$item['forecast'] = $ar_forcast;
 				array_push($data, $item);
 			}
-			$this->cache->save('stations_daily_forecast',$data, (60*1));
+			$this->cache->save('stations_daily_forecast2',$data, (60*1));
             $stations_daily_forecast = $data;
 		}
 
