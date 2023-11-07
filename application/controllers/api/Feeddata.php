@@ -202,7 +202,7 @@ class Feeddata extends REST_Controller
 				array_push($data, $ar_push);	
 				
 			}
-			$this->cache->save('stations', $data, 360);
+			$this->cache->save('stations', $data, 300);
             $stations_data = $data;
 		}
 		return $stations_data;
@@ -216,7 +216,7 @@ class Feeddata extends REST_Controller
             $json = file_get_contents($url);
         	$obj = json_decode($json);
             
-            $this->cache->save('daily_forecast',$obj, 1);
+            $this->cache->save('daily_forecast',$obj, (60*60*3));
             $daily_data = $obj;
         }
        	return $daily_data;
@@ -227,48 +227,52 @@ class Feeddata extends REST_Controller
 		$stations_data = $this->getStation();
 		$daily_data = $this->forecast_daily();
 		
-		$data = array();
-		foreach($stations_data as $item){
-
-			$ar_forcast = array();
-			foreach($daily_data->air_quality as $forecast_item){
-
-				
-				if((float)$forecast_item->Latitude==(float)$item['latitude'] && (float)$forecast_item->Longitude==(float)$item['longitude']){
+		if (!$stations_daily_forecast = $this->cache->get('stations_daily_forecast')) {
+			$data = array();
+			foreach($stations_data as $item){
+	
+				$ar_forcast = array();
+				foreach($daily_data->air_quality as $forecast_item){
+	
 					
-					$forecast_item->color = $this->getIndexInfo($forecast_item->PM25, 'color')['color'];
-					$forecast_item->icon = $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'];
-					$forecast_item->PM25 = ceil($forecast_item->PM25);
-
-					$ar_item = array(
-						//'color' => $this->getIndexInfo($forecast_item->PM25, 'color')['color'],
-						'pm25'	=> ceil($forecast_item->PM25),
-						//'icon'	=> $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'],
-						'forecastDate'	=> $forecast_item->ForecastDate
-					);				
-					if($ar_forcast!=null){
-						$ck_exits = 0;
-						foreach($ar_forcast as $ck_loop){
-							if($ck_loop['forecastDate']==$ar_item['forecastDate']){
-								$ck_exits=1;
+					if((float)$forecast_item->Latitude==(float)$item['latitude'] && (float)$forecast_item->Longitude==(float)$item['longitude']){
+						
+						$forecast_item->color = $this->getIndexInfo($forecast_item->PM25, 'color')['color'];
+						$forecast_item->icon = $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'];
+						$forecast_item->PM25 = ceil($forecast_item->PM25);
+	
+						$ar_item = array(
+							//'color' => $this->getIndexInfo($forecast_item->PM25, 'color')['color'],
+							'pm25'	=> ceil($forecast_item->PM25),
+							//'icon'	=> $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'],
+							'forecastDate'	=> $forecast_item->ForecastDate
+						);				
+						if($ar_forcast!=null){
+							$ck_exits = 0;
+							foreach($ar_forcast as $ck_loop){
+								if($ck_loop['forecastDate']==$ar_item['forecastDate']){
+									$ck_exits=1;
+								}
 							}
+							if($ck_exits==0){
+								array_push($ar_forcast,$ar_item);
+							}
+						}else{
+							array_push($ar_forcast, $ar_item);
 						}
-						if($ck_exits==0){
-							array_push($ar_forcast,$ar_item);
-						}
-					}else{
-						array_push($ar_forcast, $ar_item);
 					}
+					
 				}
-				
+	
+	
+				$item['forecast'] = $ar_forcast;
+				array_push($data, $item);
 			}
-
-
-			$item['forecast'] = $ar_forcast;
-			array_push($data, $item);
+			$this->cache->save('stations_daily_forecast',$data, (60*60*15));
+            $stations_daily_forecast = $data;
 		}
 
-		$this->response($data, 200);
+		$this->response($stations_daily_forecast, 200);
 
     }
 
