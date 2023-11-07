@@ -277,14 +277,15 @@ class Feeddata extends REST_Controller
 
 				
 				if((float)$forecast_item->Latitude==(float)$item['latitude'] && (float)$forecast_item->Longitude==(float)$item['longitude']){
-					echo '<pre>';
+					
+					$forecast_item->color = $this->getIndexInfo($forecast_item->PM25, 'color')['color'];
+					$forecast_item->icon = $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'];
+					$forecast_item->PM25 = ceil($forecast_item->PM25);
+
+				echo '<pre>';
 				print_r($forecast_item);
 				echo '</pre>';
 				exit;
-				// 	$forecast_item->color = $this->getIndexInfo($forecast_item->PM25, 'color')['color'];
-				// 	$forecast_item->icon = $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'];
-				// 	$forecast_item->PM25 = ceil($forecast_item->PM25);
-
 				// 	if($ar_forcast!=null){
 				// 		$ck_exits = 0;
 				// 		foreach($ar_forcast as $ck_loop){
