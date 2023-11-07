@@ -5,6 +5,8 @@ require APPPATH . 'libraries/REST_Controller.php';
 //ref APIs ::
 //https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily
 //https://rcces.soc.cmu.ac.th:1443/pm25/v1/getHourly
+// https://rcces.soc.cmu.ac.th:1443/pm25/v1/getHourlyByStationId?StationId=10
+// https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDailyByStationId?StationId=10
 
 class Feeddata extends REST_Controller
 {
