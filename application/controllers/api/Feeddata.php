@@ -152,7 +152,7 @@ class Feeddata extends REST_Controller
 
 	public function getstation_get(){
 		$data = array();
-		$rsStation = json_decode(file_get_contents('https://www-old.cmuccdc.org/api2/dustboy/stations?v='.date('His')));
+		$rsStation = json_decode(file_get_contents('https://www-old.cmuccdc.org/assets/api/haze/pwa/json/stations_temp.json'));
 		//$rsStation = json_decode(file_get_contents('https://www-old.cmuccdc.org/assets/api/haze/pwa/json/stations.json'));
 		foreach($rsStation as $item){
 			$ar_push = array(
