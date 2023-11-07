@@ -358,8 +358,6 @@ class Feeddata extends REST_Controller
 					}
 					
 				}
-	
-	
 				$item['forecast'] = $ar_forcast;
 				array_push($data, $item);
 			}
