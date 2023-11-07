@@ -150,6 +150,32 @@ class Feeddata extends REST_Controller
 		}
 	}
 
+	function getIndexInfo($val, $type){
+		$point=0;
+		$data=array();
+		$ar_color = array(1=>'0,191,243', '0,166,81', '253,192,78', '242,101,34', '205,0,0');
+		$ar_icon = array(1=>'th-dust-boy-01', 'th-dust-boy-02', 'th-dust-boy-03', 'th-dust-boy-04', 'th-dust-boy-05');
+
+		if (round($val) <= 15) {
+			$point = 1;
+		} else if (round($val) > 15 && round($val) <= 25) {
+			$point = 2;
+		} else if (round($val) > 25 && round($val) <= 37.5) {
+			$point = 3;
+		} else if (round($val) > 37.5 && round($val) <= 75) {
+			$point = 4;
+		} else if (round($val) > 75) {
+			$point = 5;
+		}
+		if($type=="color"){
+			$data['color'] = $ar_color[$point];
+		}else{
+			$data['icon'] = $ar_icon[$point];
+		}			
+		return $data;
+		
+	}
+
 	public function getstation_get(){
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
 		if (!$stations_data = $this->cache->get('stations')) {
@@ -215,9 +241,39 @@ class Feeddata extends REST_Controller
     public function hourly_get(){
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
 		$stations_data = $this->cache->get('stations');
-		$daily_forecast = $this->cache->get('daily_forecast');
+		$rsDay = json_decode(file_get_contents('https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily'));
+		
+		$data = array();
+		foreach($stations_data as $item){
+			$ar_forcast = array();
+			foreach($rsDay->air_quality as $forecast_item){
+				if((float)$forecast_item->Latitude==(float)$item->Latitude && (float)$forecast_item->Longitude==(float)$item->Longitude){
+					$forecast_item->color = $this->getIndexInfo($forecast_item->PM25, 'color')['color'];
+					$forecast_item->icon = $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'];
+					$forecast_item->PM25 = ceil($forecast_item->PM25);
+				}
 
-		print_r($daily_forecast);
+				if($ar_forcast!=null){
+					$ck_exits = 0;
+					foreach($ar_forcast as $ck_loop){
+						if($ck_loop->ForecastDate==$forecast_item->ForecastDate){
+							$ck_exits=1;
+						}
+					}
+					if($ck_exits==0){
+						array_push($ar_forcast,$forecast_item);
+					}
+				}else{
+					array_push($ar_forcast, $forecast_item);
+				}
+
+			}
+			array_push($data, $ar_forcast);
+		}
+
+		echo '<pre>';
+		print_r($data);
+		echo '</pre>';
 
     }
 
