@@ -273,7 +273,7 @@ class Feeddata extends REST_Controller
 				$item['forecast'] = $ar_forcast;
 				array_push($data, $item);
 			}
-			$this->cache->save('stations_daily_forecast',$data, (60*60*15));
+			$this->cache->save('stations_daily_forecast',$data, (60*1));
             $stations_daily_forecast = $data;
 		}
 
