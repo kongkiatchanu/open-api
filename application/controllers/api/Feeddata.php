@@ -176,7 +176,7 @@ class Feeddata extends REST_Controller
 		
 	}
 
-	public function getstation_get(){
+	public function getStation(){
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
 		if (!$stations_data = $this->cache->get('stations')) {
 			$data = array();
@@ -205,7 +205,7 @@ class Feeddata extends REST_Controller
 			$this->cache->save('stations', $data, 360);
             $stations_data = $data;
 		}
-		$this->response($stations_data, 200);
+		return $stations_data;
 	}
 
     public function forecast_daily_get()
@@ -238,35 +238,13 @@ class Feeddata extends REST_Controller
         $this->response($daily_data, 200);
     }
 
-    public function hourly_get(){
+    public function stations_daily_forecast_get(){
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-		if (!$stations_data = $this->cache->get('stations')) {
-			$data = array();
-			$rsStation = json_decode(file_get_contents('https://www-old.cmuccdc.org/assets/api/haze/pwa/json/stations_temp.json'));
-			foreach($rsStation as $item){
-				$ar_push = array(
-					'id'	=> $item->id,
-					'code'	=> $item->dustboy_id,
-					'url'	=> $item->dustboy_uri,
-					'name_th'	=> $item->dustboy_name,
-					'name_en'	=> $item->dustboy_name_en,
-					'latitude'	=> $item->dustboy_lat,
-					'longitude'	=> $item->dustboy_lon,
-					'pm10'			=> $item->pm10,
-					'pm25'			=> $item->pm25,
-					'ws'			=> $item->wind_speed,
-					'wd'			=> $item->wind_direction,
-					'atm'			=> $item->atmospheric,
-					'temp'			=> $item->temp,
-					'humid'			=> $item->humid,
-					'updatetime'	=> $item->log_datetime
-				);
-				array_push($data, $ar_push);	
-				
-			}
-			$this->cache->save('stations', $data, 360);
-            $stations_data = $data;
-		}
+
+		$stations_data = $this->getStation();
+		
+		print_r($stations_data);
+		exit;
 		$rsDay = json_decode(file_get_contents('https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily'));
 		
 		$data = array();
@@ -309,10 +287,6 @@ class Feeddata extends REST_Controller
 			$item['forecast'] = $ar_forcast;
 			array_push($data, $item);
 		}
-
-		echo '<pre>';
-		print_r($data);
-		echo '</pre>';
 
     }
 
