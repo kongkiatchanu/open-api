@@ -176,7 +176,7 @@ class Feeddata extends REST_Controller
 				array_push($data, $ar_push);	
 				
 			}
-			$this->cache->save('daily_forecast', $data, 360);
+			$this->cache->save('stations', $data, 360);
             $stations_data = $data;
 		}
 		$this->response($stations_data, 200);
