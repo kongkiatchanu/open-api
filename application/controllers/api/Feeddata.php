@@ -179,9 +179,7 @@ class Feeddata extends REST_Controller
 					$ar_post = (array)$list->properties;
 					$ar_post['source'] = $sensor[$k];
 					
-					if($ar_post['tb_idn']!=0){
-						
-						
+					if($ar_post['tb_idn']!=0){			
 						$query = $this->db->select('id')->get_where('hospots', array('source'=>$ar_post['source'], 'latitude'=>$ar_post['latitude'], 'longitude'=>$ar_post['longitude'], 'acq_time_lmt'=>$ar_post['acq_time_lmt']));
 						$rs = $query->result();
 						if($rs==null){
