@@ -296,11 +296,6 @@ class Feeddata extends REST_Controller
 					}else{
 						array_push($ar_forcast, $forecast_item);
 					}
-
-					echo '<pre>';
-					print_r($ar_forcast);
-					echo '</pre>';
-					exit;
 				}
 				
 			}
