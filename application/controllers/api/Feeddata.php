@@ -151,33 +151,35 @@ class Feeddata extends REST_Controller
 	}
 
 	public function getstation_get(){
-		$data = array();
-		$rsStation = json_decode(file_get_contents('https://www-old.cmuccdc.org/assets/api/haze/pwa/json/stations_temp.json'));
-		//$rsStation = json_decode(file_get_contents('https://www-old.cmuccdc.org/assets/api/haze/pwa/json/stations.json'));
-		foreach($rsStation as $item){
-			$ar_push = array(
-				'id'	=> $item->id,
-				'code'	=> $item->dustboy_id,
-				'url'	=> $item->dustboy_uri,
-				'name_th'	=> $item->dustboy_name,
-				'name_en'	=> $item->dustboy_name_en,
-				'latitude'	=> $item->dustboy_lat,
-				'longitude'	=> $item->dustboy_lon,
-				'pm10'			=> $item->pm10,
-				'pm25'			=> $item->pm25,
-				'ws'			=> $item->wind_speed,
-				'wd'			=> $item->wind_direction,
-				'atm'			=> $item->atmospheric,
-				'temp'			=> $item->temp,
-				'humid'			=> $item->humid,
-				'updatetime'	=> $item->log_datetime
-			);
-			array_push($data, $ar_push);	
+		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+		if (!$stations_data = $this->cache->get('stations')) {
+			$data = array();
+			$rsStation = json_decode(file_get_contents('https://www-old.cmuccdc.org/assets/api/haze/pwa/json/stations_temp.json'));
+			foreach($rsStation as $item){
+				$ar_push = array(
+					'id'	=> $item->id,
+					'code'	=> $item->dustboy_id,
+					'url'	=> $item->dustboy_uri,
+					'name_th'	=> $item->dustboy_name,
+					'name_en'	=> $item->dustboy_name_en,
+					'latitude'	=> $item->dustboy_lat,
+					'longitude'	=> $item->dustboy_lon,
+					'pm10'			=> $item->pm10,
+					'pm25'			=> $item->pm25,
+					'ws'			=> $item->wind_speed,
+					'wd'			=> $item->wind_direction,
+					'atm'			=> $item->atmospheric,
+					'temp'			=> $item->temp,
+					'humid'			=> $item->humid,
+					'updatetime'	=> $item->log_datetime
+				);
+				array_push($data, $ar_push);	
+				
+			}
+			$this->cache->save('daily_forecast', $data, 360);
+            $stations_data = $data;
 		}
-
-		echo '<pre>';
-		print_r($data);
-		echo '</pre>';
+		$this->response($stations_data, 200);
 	}
 
     public function forecast_daily_get()
