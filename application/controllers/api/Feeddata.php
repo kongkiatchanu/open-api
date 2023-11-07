@@ -289,6 +289,11 @@ class Feeddata extends REST_Controller
 						'forecastDate'	=> $forecast_item->ForecastDate
 					);
 
+					echo '<pre>';
+		print_r($ar_item);
+		echo '</pre>';
+exit;
+
 				
 					if($ar_forcast!=null){
 						$ck_exits = 0;
