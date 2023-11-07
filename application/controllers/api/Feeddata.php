@@ -287,18 +287,11 @@ class Feeddata extends REST_Controller
 						'pm25'	=> ceil($forecast_item->PM25),
 						'icon'	=> $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'],
 						'forecastDate'	=> $forecast_item->ForecastDate
-					);
-
-					echo '<pre>';
-		print_r($ar_item);
-		echo '</pre>';
-exit;
-
-				
+					);				
 					if($ar_forcast!=null){
 						$ck_exits = 0;
 						foreach($ar_forcast as $ck_loop){
-							if($ck_loop->ForecastDate==$ar_item['forecastDate']){
+							if($ck_loop['forecastDate']==$ar_item['forecastDate']){
 								$ck_exits=1;
 							}
 						}
