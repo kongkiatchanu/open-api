@@ -242,9 +242,9 @@ class Feeddata extends REST_Controller
 						$forecast_item->PM25 = ceil($forecast_item->PM25);
 	
 						$ar_item = array(
-							//'color' => $this->getIndexInfo($forecast_item->PM25, 'color')['color'],
+							'color' => $this->getIndexInfo($forecast_item->PM25, 'color')['color'],
 							'pm25'	=> ceil($forecast_item->PM25),
-							//'icon'	=> $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'],
+							'icon'	=> $this->getIndexInfo($forecast_item->PM25, 'icon')['icon'],
 							'forecastDate'	=> $forecast_item->ForecastDate
 						);				
 						if($ar_forcast!=null){
