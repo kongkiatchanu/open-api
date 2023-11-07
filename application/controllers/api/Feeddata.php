@@ -224,21 +224,14 @@ class Feeddata extends REST_Controller
 
     public function stations_daily_forecast_get(){
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-
 		$stations_data = $this->getStation();
 		$daily_data = $this->forecast_daily();
-		echo '2';
-		echo '<pre>';
-		print_r($daily_data);
-		echo '</pre>';
-		exit;
-		$rsDay = json_decode(file_get_contents('https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily'));
 		
 		$data = array();
 		foreach($stations_data as $item){
 
 			$ar_forcast = array();
-			foreach($rsDay->air_quality as $forecast_item){
+			foreach($daily_data->air_quality as $forecast_item){
 
 				
 				if((float)$forecast_item->Latitude==(float)$item['latitude'] && (float)$forecast_item->Longitude==(float)$item['longitude']){
