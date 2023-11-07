@@ -255,12 +255,12 @@ class Feeddata extends REST_Controller
     function forecast_daily()
     {
         $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-        if (!$daily_data = $this->cache->get('daily_forecast')) {
+        if (!$daily_data = $this->cache->get('daily_forecast4day')) {
             $url = 'https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily';
             $json = file_get_contents($url);
         	$obj = json_decode($json);
             
-            $this->cache->save('daily_forecast',$obj, 1);
+            $this->cache->save('daily_forecast4day',$obj, 1);
             $daily_data = $obj;
         }
        	return $daily_data;
