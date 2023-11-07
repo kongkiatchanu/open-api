@@ -293,9 +293,9 @@ class Feeddata extends REST_Controller
 						array_push($ar_forcast, $forecast_item);
 					}
 				}
-				$forecast_item->forecast = $ar_forcast;
+				
 			}
-			
+			$item->forecast = $ar_forcast;
 			array_push($data, $forecast_item);
 		}
 
