@@ -242,9 +242,6 @@ class Feeddata extends REST_Controller
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
 
 		$stations_data = $this->getStation();
-		
-		print_r($stations_data);
-		exit;
 		$rsDay = json_decode(file_get_contents('https://rcces.soc.cmu.ac.th:1443/pm25/v1/getDaily'));
 		
 		$data = array();
@@ -287,6 +284,8 @@ class Feeddata extends REST_Controller
 			$item['forecast'] = $ar_forcast;
 			array_push($data, $item);
 		}
+
+		$this->response($data, 200);
 
     }
 
