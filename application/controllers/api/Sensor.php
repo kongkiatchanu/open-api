@@ -29,4 +29,18 @@ class Sensor extends REST_Controller
 
     }
 
+    public function stationsAllSensor_get(){
+
+        $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+		if ( ! $stations = $this->cache->get('stations'))
+		{
+            $url = 'https://www-old.cmuccdc.org/api2/dustboy/stations';
+			$rs = json_decode(file_get_contents($url));
+
+			$this->cache->save('stations', $rs, 600);
+        }
+        header('Content-Type: application/json; charset=utf-8');
+		echo json_encode($stations);
+    }
+
 }
