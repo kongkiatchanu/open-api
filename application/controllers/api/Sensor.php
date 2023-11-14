@@ -35,9 +35,9 @@ class Sensor extends REST_Controller
 		if ( ! $stations = $this->cache->get('stations'))
 		{
             $url = 'https://www-old.cmuccdc.org/api2/dustboy/stations';
-			$rs = json_decode(file_get_contents($url));
+			$stations = json_decode(file_get_contents($url));
 
-			$this->cache->save('stations', $rs, 600);
+			$this->cache->save('stations', $stations, 600);
         }
         header('Content-Type: application/json; charset=utf-8');
 		echo json_encode($stations);
