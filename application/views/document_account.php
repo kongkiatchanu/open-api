@@ -48,29 +48,26 @@
 												<div class="row">
 													<div class="col-md-6">
 														<div class="mb-3">
-															<label for="access_name" class="form-label">ชื่อ -
-																นามสกุล</label>
-															<input type="text" class="form-control" name="access_name" required>
+															<label for="access_name" class="form-label">ชื่อ - นามสกุล</label>
+															<input type="text" class="form-control" name="access_name" required title="ชื่อ-นามสกุล">
 														</div>
 													</div>
 													<div class="col-md-6">
 														<div class="mb-3">
 															<label for="access_org"
 																class="form-label">หน่วยงาน/สังกัด</label>
-															<input type="text" class="form-control" name="access_org" required>
+															<input type="text" class="form-control" name="access_org" required title="หน่วยงาน/สังกัด">
 														</div>
 													</div>
 												</div>
 
 												<div class="mb-3">
-													<label for="access_purpose"
-														class="form-label">วัตถุประสงค์การใช้งาน</label>
-													<textarea class="form-control" name="access_purpose"
-														rows="3"></textarea>
+													<label for="access_purpose" class="form-label">วัตถุประสงค์การใช้งาน</label>
+													<textarea class="form-control" name="access_purpose" rows="3" title="วัตถุประสงค์การใช้งาน"></textarea>
 												</div>
 												<div class="mb-3">
 													<label for="access_email" class="form-label">อีเมล์ติดต่อ</label>
-													<input type="email" class="form-control" name="access_email" id="access_email" required>
+													<input type="email" class="form-control" name="access_email" id="access_email" required title="access_email">
 												</div>
 
 												<div class="row">
@@ -79,7 +76,7 @@
 															<label for="access_password"
 																class="form-label">รหัสผ่าน</label>
 															<input type="password" class="form-control"
-																name="access_password" id="access_password" required>
+																name="access_password" id="access_password" required title="รหัสผ่าน">
 														</div>
 													</div>
 													<div class="col-md-6">
@@ -87,7 +84,7 @@
 															<label for="access_password_c"
 																class="form-label">ยืนยันรหัสผ่าน</label>
 															<input type="password" class="form-control"
-																name="access_password_c" id="access_password_c" required>
+																name="access_password_c" id="access_password_c" required title="ยืนยันรหัสผ่าน">
 														</div>
 													</div>
 												</div>
