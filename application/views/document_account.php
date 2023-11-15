@@ -24,6 +24,13 @@
 							</div>
 						</div>
 						<div class="col-md-5 offset-md-2">
+							
+							<div class="containerz">
+								<div class="alert alert-warning">
+								<h5>กรุณาตรวจสอบข้อมูล</h5>
+								<ol></ol>
+								</div>
+							</div>
 
 							<div class="accordion accordion-flush" id="accordionFlushExample">
 								<div class="accordion-item">
@@ -37,7 +44,7 @@
 									<div id="flush-collapseOne" class="accordion-collapse collapse show"
 										aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
 										<div class="accordion-body">
-											<form action="<?=base_url('main/register')?>" method="post">
+											<form id="frm_register" action="<?=base_url('main/register')?>" method="post">
 												<div class="row">
 													<div class="col-md-6">
 														<div class="mb-3">
@@ -63,7 +70,7 @@
 												</div>
 												<div class="mb-3">
 													<label for="access_email" class="form-label">อีเมล์ติดต่อ</label>
-													<input type="email" class="form-control" name="access_email">
+													<input type="email" class="form-control" name="access_email" id="access_email">
 												</div>
 
 												<div class="row">
@@ -72,7 +79,7 @@
 															<label for="access_password"
 																class="form-label">รหัสผ่าน</label>
 															<input type="password" class="form-control"
-																name="access_password">
+																name="access_password" id="access_password">
 														</div>
 													</div>
 													<div class="col-md-6">
@@ -80,7 +87,7 @@
 															<label for="access_password_c"
 																class="form-label">ยืนยันรหัสผ่าน</label>
 															<input type="password" class="form-control"
-																name="access_password_c">
+																name="access_password_c" id="access_password_c">
 														</div>
 													</div>
 												</div>
@@ -122,3 +129,6 @@
 
 				</div>
 			</section>
+
+			<script type="text/javascript" src="<?= base_url('template') ?>/js/jquery-validation/js/jquery.validate.min.js"></script>
+			<script type="text/javascript" src="<?= base_url('template') ?>/js/jquery-validation/js/additional-methods.min.js"></script>

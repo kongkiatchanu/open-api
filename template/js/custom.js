@@ -61,31 +61,56 @@ var YogaCare = function(){
 		}
 	}
 	
-	var handleDZTree = function(){
-		if(jQuery('#dz_tree').length > 0){
-			$("#dz_tree").jstree({
-				"core": {
-					"themes": {
-						"responsive": false
-					}
-				},
-				"types": {
-					"default": {
-						"icon": "fa fa-folder"
-					},
-					"file": {
-						"icon": "fa fa-file-text"
-					}
-				},
-				"plugins": ["types"]
-			});
-		}
-	}
-	
 	var handleDeznavScroll = function(){
 		if(jQuery('.deznav-scroll').length > 0){
 			const qs = new PerfectScrollbar('.deznav-scroll');
 			qs.isRtl = false;
+		}
+	}
+
+	var handleRegister = function(){
+		if(jQuery('#frm_register').length > 0){
+			var container= $("div.containerz");
+
+			$("#frm_register").validate({
+				errorContainer: container,
+				errorLabelContainer: $("ol", container),
+				wrapper: "li",
+				meta: "validate",
+				rules: {
+					access_email: {
+							remote: {
+								type: "GET",
+								url: BASE_URI+"main/checkEmail",
+								data: {
+									factory_username: function() {
+										return $("#access_email").val();
+									}
+								}
+							}
+					},
+					user_password : {
+						minlength : 6
+					},
+					user_password_c : {
+						minlength : 6,
+						equalTo : "#user_password"
+					}
+				},
+				messages: {
+					access_email :{
+						remote:'อีเมล์นี้ลงใช้ลงทะเบียนไปแล้ว กรุณาตรวจสอบข้อมูลอีกครั้ง'
+					},
+					user_password : {
+						minlength : 'กรุณากรอกรหัสผ่านอย่างน้อย 6 ตัว'
+					},
+					user_password_c : {
+						minlength : 'กรุณากรอกรหัสผ่านอย่างน้อย 6 ตัว',
+						equalTo : "ยืนยันรหัสผ่านไม่ถูกต้อง"
+					}
+				},
+				submitHandler: function( form ) { form.submit(); }
+			});
 		}
 	}
 	
@@ -95,7 +120,6 @@ var YogaCare = function(){
 			handleSidebarCollapse();
 			handleScrollTop();
 			handleNavbarNav();
-			handleDZTree();
 			handleDeznavScroll();
 		},
 
