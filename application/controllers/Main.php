@@ -63,6 +63,7 @@ class Main extends CI_Controller {
 	public function test_verify(){
 
 		if($this->uri->segment(3)!=null){
+			echo $this->uri->segment(3);
 			$query = $this->db->get_where('users',array('securekey'=>$this->uri->segment(3)));
 			$data = $query->result_array()[0];
 			$message = '<p style="margin-bottom:20px;">สวัสดีคุณ '.$data['user_name'].'</p>';
@@ -95,7 +96,7 @@ class Main extends CI_Controller {
 					//$ar['member_service'] = json_encode($ar['member_service']);
 
 					
-					$securekey 					= $this->genKey(50);
+					$securekey 					= $this->genKey(40);
 					$ar_post['user_key']	    = $this->genKey(40);
 					$ar_post['user_email'] 		= $ar['access_email'];
 					$ar_post['user_name'] 		= $ar['access_name'];
