@@ -77,6 +77,7 @@ class Main extends CI_Controller {
 					$securekey 					= $this->genKey(100);
 					$ar_post['user_key']	    = $this->genKey(40);
 					$ar_post['user_email'] 		= $ar['access_email'];
+					$ar_post['user_name'] 		= $ar['access_name'];
 					$ar_post['user_org']		= $ar['access_org'];
 					$ar_post['user_password'] 	= md5(sha1($ar['access_password']));
 					$ar_post['user_purpose'] 	= $ar['access_purpose'];
@@ -88,7 +89,7 @@ class Main extends CI_Controller {
 
 					//$this->sendMsg($to, $message);
 					
-					$rs=$this->main_model->insertNewMember($ar);
+					$rs=$this->main_model->insertNewMember($ar_post);
 					if($rs){
 						$this->session->set_userdata('noti_action', array('dialog_view' => 'dialog_success'));
 						echo '<script>alert("ลงทะเบียนเรียบร้อยกรุณายืนยันอีเมล์ เพื่อเปิดใช้งาน");window.location="'.base_url('/#account').'";</script>';
