@@ -67,7 +67,7 @@
 												</div>
 												<div class="mb-3">
 													<label for="access_email" class="form-label">อีเมล์ติดต่อ</label>
-													<input type="email" class="form-control" name="access_email" id="access_email" required title="access_email">
+													<input type="email" class="form-control" name="access_email" id="access_email" required title="อีเมล์ติดต่อ">
 												</div>
 
 												<div class="row">
