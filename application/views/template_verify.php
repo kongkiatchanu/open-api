@@ -132,7 +132,7 @@ table, td { color: #000000; } @media (max-width: 480px) { #u_content_heading_1 .
   <tr>
     <td style="padding-right: 0px;padding-left: 0px;" align="center">
       
-      <img align="center" border="0" src="https://open-api.cmuccdc.org/templates/image/rsub_noti.jpeg" alt="image" title="image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 70%;max-width: 406px;" width="406" class="v-src-width v-src-max-width"/>
+      <img align="center" border="0" src="https://open-api.cmuccdc.org/template/images/rsub_noti.jpeg" alt="image" title="image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 70%;max-width: 406px;" width="406" class="v-src-width v-src-max-width"/>
       
     </td>
   </tr>
