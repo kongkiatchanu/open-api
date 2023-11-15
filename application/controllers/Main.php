@@ -47,7 +47,6 @@ class Main extends CI_Controller {
         } else {
             echo false;
         }
-		exit;
 	}
 
 	public function checkEmail(){
