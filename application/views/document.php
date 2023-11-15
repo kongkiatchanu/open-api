@@ -100,10 +100,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				style="background-image: url(https://images.unsplash.com/photo-1469365556835-3da3db4c253b?auto=format&fit=crop&q=60&w=900&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YWlyJTIwY2xvdWR8ZW58MHx8MHx8fDA%3D);">
 				<div class="container">
 					<div class="inner-content">
-						<h1 class="title">คู่มือการใช้งาน APIs</h1>
+						<h1 class="title">www.cmuccdc.org</h1>
 						<div class="colored-line"></div>
 						<div class="section-description">
-							www.cmuccdc.org
+							APIs Sensors Data
 						</div>
 						<div class="colored-line"></div>
 					</div>
