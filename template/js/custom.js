@@ -85,7 +85,7 @@ var YogaCare = function(){
 								type: "GET",
 								url: BASE_URI+"main/checkEmail",
 								data: {
-									factory_username: function() {
+									access_email: function() {
 										return $("#access_email").val();
 									}
 								}
