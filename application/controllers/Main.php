@@ -52,8 +52,13 @@ class Main extends CI_Controller {
 					$ar_post['user_password'] 	= md5(sha1($ar['access_password']));
 					$ar_post['user_purpose'] 	= $ar['access_purpose'];
 					$ar_post['createdate'] 		= date('Y-m-d H:i:s');
-
+					
 					unset($ar['g-recaptcha-response']);
+
+					echo '<pre>';
+					print_r($ar_post);
+					echo '</pre>';
+					exit;
 					
 					$rs=$this->main_model->insertNewMember($ar);
 					if($rs){
