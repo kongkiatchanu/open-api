@@ -58,6 +58,14 @@ class Main extends CI_Controller {
 		}
 	}
 
+	public function test_verify(){
+		$message = 'ads';
+		$ar = array(
+			'message'   => $message
+		);
+		$this->load->view('noti', $ar);
+	}
+
 	public function register(){
 		if($this->input->post()!=null){
 			$ar = $this->input->post();
@@ -82,9 +90,13 @@ class Main extends CI_Controller {
 					$ar_post['user_password'] 	= md5(sha1($ar['access_password']));
 					$ar_post['user_purpose'] 	= $ar['access_purpose'];
 					$ar_post['createdate'] 		= date('Y-m-d H:i:s');
+					$ar_post['securekey'] 		= $securekey;
 					
 					unset($ar['g-recaptcha-response']);
 
+					$message = '<p>สวัสดีคุณ '.$ar_post['user_name'].'</p>';
+					$message .='<p>เมื่อสักครู่มีการใช้อีเมล์สมัครใช้งาน APIs <strong>ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ cmuccdc.org</strong><br/>';
+					$message .='ภายใต้หน่วยงาน/สังกัด:: <strong>'.$ar_post['user_org'].'</strong></p>';
 					
 
 					//$this->sendMsg($to, $message);
