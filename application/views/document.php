@@ -224,7 +224,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</div>
 
 												<div class="row">
-													<div class="col-md-12">
+													<div class="col-md-12 mb-3">
 													<div class="g-recaptcha" data-sitekey="6LfegkgUAAAAAL-jtSQ3Bz8XR6M_usJU_-vZ6ozo"></div>
 													</div>
 												</div>
