@@ -59,7 +59,9 @@ class Main extends CI_Controller {
 	}
 
 	public function test_verify(){
-		$message = 'ads';
+		$message = '<p>สวัสดีคุณ xxxx</p>';
+		$message .='<p>เมื่อสักครู่มีการใช้อีเมล์สมัครใช้งาน APIs <strong>ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ cmuccdc.org</strong><br/>';
+		$message .='ภายใต้หน่วยงาน/สังกัด:: <strong>xxxx</strong></p>';
 		$ar = array(
 			'message'   => $message
 		);
