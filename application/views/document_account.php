@@ -130,5 +130,5 @@
 				</div>
 			</section>
 
-			<script type="text/javascript" src="<?= base_url('template') ?>/js/jquery-validation/js/jquery.validate.min.js"></script>
-			<script type="text/javascript" src="<?= base_url('template') ?>/js/jquery-validation/js/additional-methods.min.js"></script>
+			<script type="text/javascript" src="<?= base_url('template') ?>/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+			<script type="text/javascript" src="<?= base_url('template') ?>/plugins/jquery-validation/js/additional-methods.min.js"></script>
