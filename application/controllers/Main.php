@@ -118,7 +118,7 @@ class Main extends CI_Controller {
 					$data = file_get_contents('https://open-api.cmuccdc.org/main/test_verify/'.$securekey);
 
 					if($data){
-						$this->sendMsg($ar_post['user_email'], $message);
+						$this->sendMsg($ar_post['user_email'], $data);
 					}
 					$rs=$this->main_model->insertNewMember($ar_post);
 					if($rs){
