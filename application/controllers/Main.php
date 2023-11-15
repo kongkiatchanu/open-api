@@ -120,7 +120,7 @@ class Main extends CI_Controller {
 					exit;
 
 					if($data){
-						$this->sendMsg($ar_post['user_email'], $data);
+						//$this->sendMsg($ar_post['user_email'], $data);
 					}
 					$rs=$this->main_model->insertNewMember($ar_post);
 					if($rs){
