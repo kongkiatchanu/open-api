@@ -91,22 +91,22 @@ var YogaCare = function(){
 								}
 							}
 					},
-					user_password : {
+					access_password : {
 						minlength : 6
 					},
-					user_password_c : {
+					access_password_c : {
 						minlength : 6,
-						equalTo : "#user_password"
+						equalTo : "#access_password"
 					}
 				},
 				messages: {
 					access_email :{
 						remote:'อีเมล์นี้ลงใช้ลงทะเบียนไปแล้ว กรุณาตรวจสอบข้อมูลอีกครั้ง'
 					},
-					user_password : {
+					access_password : {
 						minlength : 'กรุณากรอกรหัสผ่านอย่างน้อย 6 ตัว'
 					},
-					user_password_c : {
+					access_password_c : {
 						minlength : 'กรุณากรอกรหัสผ่านอย่างน้อย 6 ตัว',
 						equalTo : "ยืนยันรหัสผ่านไม่ถูกต้อง"
 					}
