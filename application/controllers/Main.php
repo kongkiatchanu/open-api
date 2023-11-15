@@ -107,14 +107,6 @@ class Main extends CI_Controller {
 					$ar_post['securekey'] 		= $securekey;
 					
 					unset($ar['g-recaptcha-response']);
-
-					
-					$message = '<p style="margin-bottom:20px;">สวัสดีคุณ '.$ar_post['user_name'].'</p>';
-					$message .='<p style="margin-bottom:20px;">เมื่อสักครู่มีการสมัครใช้งาน APIs ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ<br/>';
-					$message .='ภายใต้หน่วยงาน/สังกัด:: '.$ar_post['user_org'].'<br/>';
-					$message .='กรุณากดลิงค์ด้านล่างเพื่อยืนยันอีเมล์นี้</p>';
-
-					$message .= '<p style="margin-bottom:20px;">'.base_url().'verify_account/'.$securekey.'</p>';
 					
 					$data = file_get_contents('https://open-api.cmuccdc.org/main/test_verify/'.$securekey);
 					
