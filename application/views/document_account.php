@@ -50,14 +50,14 @@
 														<div class="mb-3">
 															<label for="access_name" class="form-label">ชื่อ -
 																นามสกุล</label>
-															<input type="text" class="form-control" name="access_name">
+															<input type="text" class="form-control" name="access_name" required>
 														</div>
 													</div>
 													<div class="col-md-6">
 														<div class="mb-3">
 															<label for="access_org"
 																class="form-label">หน่วยงาน/สังกัด</label>
-															<input type="text" class="form-control" name="access_org">
+															<input type="text" class="form-control" name="access_org" required>
 														</div>
 													</div>
 												</div>
@@ -70,7 +70,7 @@
 												</div>
 												<div class="mb-3">
 													<label for="access_email" class="form-label">อีเมล์ติดต่อ</label>
-													<input type="email" class="form-control" name="access_email" id="access_email">
+													<input type="email" class="form-control" name="access_email" id="access_email" required>
 												</div>
 
 												<div class="row">
@@ -79,7 +79,7 @@
 															<label for="access_password"
 																class="form-label">รหัสผ่าน</label>
 															<input type="password" class="form-control"
-																name="access_password" id="access_password">
+																name="access_password" id="access_password" required>
 														</div>
 													</div>
 													<div class="col-md-6">
@@ -87,7 +87,7 @@
 															<label for="access_password_c"
 																class="form-label">ยืนยันรหัสผ่าน</label>
 															<input type="password" class="form-control"
-																name="access_password_c" id="access_password_c">
+																name="access_password_c" id="access_password_c" required>
 														</div>
 													</div>
 												</div>
@@ -100,7 +100,7 @@
 
 												<div class="mb-3">
 													<div class="d-grid gap-2">
-														<button class="btn btn-primary">ลงทะเบียน</button>
+														<button type="submit" class="btn btn-primary">ลงทะเบียน</button>
 													</div>
 												</div>
 											</form>
