@@ -62,7 +62,12 @@ class Main extends CI_Controller {
 
 	public function test_verify(){
 
-		echo $this->uri->segment(2);
+		if($this->uri->segment(3)!=null){
+			$query = $this->db->get_where('users',array('securekey'=>$this->uri->segment(3)));
+			$data = $query->result_array()[0];
+
+			print_r($data);
+		}
 		exit;
 		$message = '<p style="margin-bottom:20px;">สวัสดีคุณ xxxx</p>';
 		$message .='<p style="margin-bottom:20px;">เมื่อสักครู่มีการใช้อีเมล์สมัครใช้งาน APIs ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ<br/>';
