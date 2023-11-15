@@ -64,7 +64,7 @@ class Main extends CI_Controller {
 		$message .='ภายใต้หน่วยงาน/สังกัด:: xxxx<br/>';
 		$message .='กรุณากดลิงค์ด้านล่างเพื่อยืนยันอีเมล์นี้</p>';
 
-		$message .= '<p>'.base_url().'verify_account/sssss</p>';
+		$message .= '<p style="margin-bottom:20px;">'.base_url().'verify_account/sssss</p>';
 		$ar = array(
 			'message'   => $message
 		);
@@ -103,8 +103,14 @@ class Main extends CI_Controller {
 					$message .='<p>เมื่อสักครู่มีการใช้อีเมล์สมัครใช้งาน APIs <strong>ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ cmuccdc.org</strong><br/>';
 					$message .='ภายใต้หน่วยงาน/สังกัด:: <strong>'.$ar_post['user_org'].'</strong></p>';
 					
+					$message = '<p style="margin-bottom:20px;">สวัสดีคุณ '.$ar_post['user_name'].'</p>';
+					$message .='<p style="margin-bottom:20px;">เมื่อสักครู่มีการใช้อีเมล์สมัครใช้งาน APIs ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ<br/>';
+					$message .='ภายใต้หน่วยงาน/สังกัด:: '.$ar_post['user_org'].'<br/>';
+					$message .='กรุณากดลิงค์ด้านล่างเพื่อยืนยันอีเมล์นี้</p>';
 
-					//$this->sendMsg($to, $message);
+					$message .= '<p style="margin-bottom:20px;">'.base_url().'verify_account/'.$securekey.'</p>';
+
+					$this->sendMsg($ar_post['user_email'], $message);
 					
 					$rs=$this->main_model->insertNewMember($ar_post);
 					if($rs){
