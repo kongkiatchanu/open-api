@@ -65,7 +65,11 @@ class Main extends CI_Controller {
 		if($this->uri->segment(3)!=null){
 			echo $this->uri->segment(3);
 			$query = $this->db->get_where('users',array('securekey'=>$this->uri->segment(3)));
-			$data = $query->result_array()[0];
+			$data = $query->result_array();
+
+
+			print_r($data);
+
 			$message = '<p style="margin-bottom:20px;">สวัสดีคุณ '.$data['user_name'].'</p>';
 			$message .='<p style="margin-bottom:20px;">เมื่อสักครู่มีการใช้อีเมล์สมัครใช้งาน APIs ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ<br/>';
 			$message .='ภายใต้หน่วยงาน/สังกัด:: '.$data['user_org'].'<br/>';
