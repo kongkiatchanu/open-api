@@ -63,7 +63,7 @@ class Main extends CI_Controller {
 		$ar = array(
 			'message'   => $message
 		);
-		$this->load->view('noti', $ar);
+		$this->load->view('template_verify', $ar);
 	}
 
 	public function register(){
