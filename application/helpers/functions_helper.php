@@ -29,17 +29,7 @@ function ConvertToThaiDate($date, $short)
 }
 
 
-function genKey($length = 40){
-		
-	$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	$charactersLength = strlen($characters);
-	$string = '';
-	for ($i = 0; $i < $length; $i++) {
-		$string .= $characters[rand(0, $charactersLength - 1)];
-	}
-	return $string;
 
-}
 
 function getBankList($id=null){
 	$ar_list = array(1=>

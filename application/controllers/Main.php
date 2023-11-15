@@ -16,6 +16,17 @@ class Main extends CI_Controller {
 		$this->load->view('document');
 	}
 
+	function genKey($length = 40){
+		
+		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$charactersLength = strlen($characters);
+		$string = '';
+		for ($i = 0; $i < $length; $i++) {
+			$string .= $characters[rand(0, $charactersLength - 1)];
+		}
+		return $string;
+	}
+
 	public function checkEmail(){
 		if(trim($this->input->get('access_email'))){
 			$rs = $this->main_model->ckRegisterEmail($this->input->get('access_email'));
@@ -44,7 +55,7 @@ class Main extends CI_Controller {
 
 					
 					
-					$ar_post['user_key']	    = genKey(40);
+					$ar_post['user_key']	    = $this->genKey(40);
 					$ar_post['user_email'] 		= $ar['access_email'];
 					$ar_post['user_org']		= $ar['access_org'];
 					$ar_post['user_password'] 	= md5(sha1($ar['access_password']));
