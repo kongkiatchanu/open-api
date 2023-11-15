@@ -70,6 +70,7 @@ var YogaCare = function(){
 
 	var handleRegister = function(){
 		if(jQuery('#frm_register').length > 0){
+			console.log('frm_register');
 			var container= $("div.containerz");
 
 			$("#frm_register").validate({
