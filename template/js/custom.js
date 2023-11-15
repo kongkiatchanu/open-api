@@ -1,5 +1,6 @@
 var YogaCare = function(){
 	
+	var BASE_URI ='https://open-api.cmuccdc.org/';
 	var screenWidth = $( window ).width();
 	
 	var handleSidebarCollapse = function(){
