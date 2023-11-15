@@ -95,7 +95,7 @@ class Main extends CI_Controller {
 					//$ar['member_service'] = json_encode($ar['member_service']);
 
 					
-					$securekey 					= $this->genKey(100);
+					$securekey 					= $this->genKey(50);
 					$ar_post['user_key']	    = $this->genKey(40);
 					$ar_post['user_email'] 		= $ar['access_email'];
 					$ar_post['user_name'] 		= $ar['access_name'];
@@ -116,6 +116,9 @@ class Main extends CI_Controller {
 					$message .= '<p style="margin-bottom:20px;">'.base_url().'verify_account/'.$securekey.'</p>';
 					
 					$data = file_get_contents('https://open-api.cmuccdc.org/main/test_verify/'.$securekey);
+					
+					echo $data;
+					exit;
 
 					if($data){
 						$this->sendMsg($ar_post['user_email'], $data);
