@@ -175,7 +175,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<div id="flush-collapseOne" class="accordion-collapse collapse show"
 										aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
 										<div class="accordion-body">
-											<form action="" method="post">
+											<form action="<?=base_url('main/register')?>" method="post">
 												<div class="row">
 													<div class="col-md-6">
 														<div class="mb-3">
