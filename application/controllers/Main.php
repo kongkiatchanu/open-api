@@ -65,10 +65,7 @@ class Main extends CI_Controller {
 		if($this->uri->segment(3)!=null){
 			echo $this->uri->segment(3);
 			$query = $this->db->get_where('users',array('securekey'=>$this->uri->segment(3)));
-			$data = $query->result_array();
-
-
-			print_r($data);
+			$data = $query->result_array()[0];
 
 			$message = '<p style="margin-bottom:20px;">สวัสดีคุณ '.$data['user_name'].'</p>';
 			$message .='<p style="margin-bottom:20px;">เมื่อสักครู่มีการใช้อีเมล์สมัครใช้งาน APIs ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ<br/>';
@@ -112,21 +109,16 @@ class Main extends CI_Controller {
 					
 					unset($ar['g-recaptcha-response']);
 					
-					echo $securekey;
-					echo '<br/>';
-					$data = file_get_contents('https://open-api.cmuccdc.org/main/test_verify/'.$securekey);
-					
-					echo $data;
-					exit;
-
-					if($data){
-						//$this->sendMsg($ar_post['user_email'], $data);
-					}
 					$rs=$this->main_model->insertNewMember($ar_post);
 					if($rs){
 						$this->session->set_userdata('noti_action', array('dialog_view' => 'dialog_success'));
-						echo '<script>alert("ลงทะเบียนเรียบร้อยกรุณายืนยันอีเมล์ เพื่อเปิดใช้งาน");window.location="'.base_url('/#account').'";</script>';
-						exit();
+						$data = file_get_contents('https://open-api.cmuccdc.org/main/test_verify/'.$securekey);
+						if($data){
+							$this->sendMsg($ar_post['user_email'], $data);
+							echo '<script>alert("ลงทะเบียนเรียบร้อยกรุณายืนยันอีเมล์ เพื่อเปิดใช้งาน");window.location="'.base_url('/#account').'";</script>';
+							exit();
+						}
+						
 					}else{
 						$this->session->set_userdata('noti_action', array('dialog_view' => 'dialog_spam'));
 						echo '<script>alert("เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง");window.location="'.base_url('/#account').'";</script>';
