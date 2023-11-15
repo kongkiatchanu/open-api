@@ -28,6 +28,25 @@ class Main extends CI_Controller {
 		return $string;
 	}
 
+	public function sendMsg($to, $message){
+		
+		$from = 'noreply.3e@gmail.com';
+        $subject = 'Verify Email | CMUCCDC APIs';
+        
+        $this->email->set_newline("\r\n");
+        $this->email->from($from);
+        $this->email->to($to);
+        $this->email->subject($subject);
+        $this->email->message($message);
+
+        if ($this->email->send()) {
+            echo true;
+        } else {
+            echo false;
+        }
+		exit;
+	}
+
 	public function checkEmail(){
 		if(trim($this->input->get('access_email'))){
 			$rs = $this->main_model->ckRegisterEmail($this->input->get('access_email'));
@@ -55,7 +74,7 @@ class Main extends CI_Controller {
 					//$ar['member_service'] = json_encode($ar['member_service']);
 
 					
-					
+					$securekey 					= $this->genKey(100);
 					$ar_post['user_key']	    = $this->genKey(40);
 					$ar_post['user_email'] 		= $ar['access_email'];
 					$ar_post['user_org']		= $ar['access_org'];
@@ -65,15 +84,14 @@ class Main extends CI_Controller {
 					
 					unset($ar['g-recaptcha-response']);
 
-					echo '<pre>';
-					print_r($ar_post);
-					echo '</pre>';
-					exit;
+					
+
+					//$this->sendMsg($to, $message);
 					
 					$rs=$this->main_model->insertNewMember($ar);
 					if($rs){
 						$this->session->set_userdata('noti_action', array('dialog_view' => 'dialog_success'));
-						echo '<script>alert("สมัครสมาชิกเรียบร้อย");window.location="'.base_url('auth/login').'";</script>';
+						echo '<script>alert("ลงทะเบียนเรียบร้อยกรุณายืนยันอีเมล์ เพื่อเปิดใช้งาน");window.location="'.base_url('/#account').'";</script>';
 						exit();
 					}else{
 						$this->session->set_userdata('noti_action', array('dialog_view' => 'dialog_spam'));
