@@ -25,9 +25,9 @@
 						</div>
 						<div class="col-md-5 offset-md-2">
 							
-							<div class="containerz">
+							<div class="containerz" style="display:none">
 								<div class="alert alert-warning">
-								<h5>กรุณาตรวจสอบข้อมูล</h5>
+								<h5 class="text-warning">กรุณาตรวจสอบข้อมูล</h5>
 								<ol></ol>
 								</div>
 							</div>
