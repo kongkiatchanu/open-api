@@ -61,6 +61,9 @@ class Main extends CI_Controller {
 	}
 
 	public function test_verify(){
+
+		echo $this->uri->segment(2);
+		exit;
 		$message = '<p style="margin-bottom:20px;">สวัสดีคุณ xxxx</p>';
 		$message .='<p style="margin-bottom:20px;">เมื่อสักครู่มีการใช้อีเมล์สมัครใช้งาน APIs ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ<br/>';
 		$message .='ภายใต้หน่วยงาน/สังกัด:: xxxx<br/>';
@@ -101,16 +104,15 @@ class Main extends CI_Controller {
 					
 					unset($ar['g-recaptcha-response']);
 
-					$message = '<p>สวัสดีคุณ '.$ar_post['user_name'].'</p>';
-					$message .='<p>เมื่อสักครู่มีการใช้อีเมล์สมัครใช้งาน APIs <strong>ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ cmuccdc.org</strong><br/>';
-					$message .='ภายใต้หน่วยงาน/สังกัด:: <strong>'.$ar_post['user_org'].'</strong></p>';
 					
 					$message = '<p style="margin-bottom:20px;">สวัสดีคุณ '.$ar_post['user_name'].'</p>';
-					$message .='<p style="margin-bottom:20px;">เมื่อสักครู่มีการใช้อีเมล์สมัครใช้งาน APIs ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ<br/>';
+					$message .='<p style="margin-bottom:20px;">เมื่อสักครู่มีการสมัครใช้งาน APIs ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ<br/>';
 					$message .='ภายใต้หน่วยงาน/สังกัด:: '.$ar_post['user_org'].'<br/>';
 					$message .='กรุณากดลิงค์ด้านล่างเพื่อยืนยันอีเมล์นี้</p>';
 
 					$message .= '<p style="margin-bottom:20px;">'.base_url().'verify_account/'.$securekey.'</p>';
+					
+					$data = file_get_contents('https://open-api.cmuccdc.org/main/test_verify/'.$securekey);
 
 					$this->sendMsg($ar_post['user_email'], $message);
 					
