@@ -108,6 +108,8 @@ class Main extends CI_Controller {
 					
 					unset($ar['g-recaptcha-response']);
 					
+					echo $securekey;
+					echo '<br/>';
 					$data = file_get_contents('https://open-api.cmuccdc.org/main/test_verify/'.$securekey);
 					
 					echo $data;
