@@ -43,10 +43,8 @@ class Main extends CI_Controller {
 					//$ar['member_service'] = json_encode($ar['member_service']);
 
 					
-
 					
-					$ar['member_code'] = $this->genKey(10);
-					
+					$ar_post['user_key']	    = genKey(40);
 					$ar_post['user_email'] 		= $ar['access_email'];
 					$ar_post['user_org']		= $ar['access_org'];
 					$ar_post['user_password'] 	= md5(sha1($ar['access_password']));
