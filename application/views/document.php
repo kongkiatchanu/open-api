@@ -36,6 +36,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<link
 		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 		rel="stylesheet">
+	<script src='https://www.google.com/recaptcha/api.js?hl=th'></script>
 
 </head>
 
@@ -219,6 +220,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 															<input type="password" class="form-control"
 																name="access_password_c">
 														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-md-12">
+													<div class="g-recaptcha" data-sitekey="6LfegkgUAAAAAL-jtSQ3Bz8XR6M_usJU_-vZ6ozo"></div>
 													</div>
 												</div>
 
