@@ -10,6 +10,9 @@ class Main extends CI_Controller {
 		$this->load->model('main_model');
         $this->load->library('form_validation');
 
+		$this->load->config('email');
+		$this->load->library('email');
+
 	}
 	public function index()
 	{
