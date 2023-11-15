@@ -62,26 +62,18 @@ class Main extends CI_Controller {
 						exit();
 					}else{
 						$this->session->set_userdata('noti_action', array('dialog_view' => 'dialog_spam'));
-						echo '<script>alert("เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง อัพไฟล์ jpg|png เท่านั้น");window.location="'.base_url('auth/register').'";</script>';
+						echo '<script>alert("เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง");window.location="'.base_url('/#account').'";</script>';
 						exit();
 					}
 
 				}
 			}else{
 				$this->session->set_userdata('noti_action', array('dialog_view' => 'dialog_spam'));
-				echo '<script>alert("เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง");window.location="'.base_url('auth/register').'";</script>';
+				echo '<script>alert("เกิดข้อผิดพลาดกรุณาลองใหม่อีกครั้ง");window.location="'.base_url('/#account').'";</script>';
 				exit();
 			}
 		}else{
-			$data = array( 
-				"rsMenu" 			=> $this->main_model->getMenuObj('menu'),
-				"page" 				=> 'index',
-				"rsProvince" 		=> $this->main_model->getProvinceList(),
-				'rsAF'				=> $this->main_model->getAFLists(),
-				"siteInfo" 			=> $this->siteinfo,
-				"view" 				=> 'main2023/register',
-			);
-			$this->load->view("main2023/template_main",$data);
+			redirect(base_url(''));
 		}
 	}
 }
