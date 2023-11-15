@@ -155,7 +155,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<script src="<?= base_url('template') ?>/plugins/bootstrap/bootstrap.min.js"></script>
 	<script src="<?= base_url('template') ?>/plugins/jstree/dist/jstree.min.js"></script>
 	<script src="<?= base_url('template') ?>/plugins/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
-	<script src="<?= base_url('template') ?>/js/custom.js"></script>
+	<script src="<?= base_url('template') ?>/js/custom.js?v=<?=date('His')?>"></script>
 </body>
 
 </html>
