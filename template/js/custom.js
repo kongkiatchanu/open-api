@@ -121,6 +121,7 @@ var YogaCare = function(){
 			handleScrollTop();
 			handleNavbarNav();
 			handleDeznavScroll();
+			handleRegister();
 		},
 
 		load:function(){
