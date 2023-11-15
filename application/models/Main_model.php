@@ -7,7 +7,7 @@ class Main_model extends CI_Model{
 
     public function ckRegisterEmail($user_email){
 		$query = $this->db->get_where('users', array('user_email' => $user_email));
-		$rs = $query->result();
+		return $query->result();
 	}
 
     public function insertNewMember($ar){
