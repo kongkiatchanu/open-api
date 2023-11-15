@@ -63,7 +63,6 @@ class Main extends CI_Controller {
 	public function test_verify(){
 
 		if($this->uri->segment(3)!=null){
-			echo $this->uri->segment(3);
 			$query = $this->db->get_where('users',array('securekey'=>$this->uri->segment(3)));
 			$data = $query->result_array()[0];
 
