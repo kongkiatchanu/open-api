@@ -29,8 +29,6 @@ function ConvertToThaiDate($date, $short)
 }
 
 
-
-
 function getBankList($id=null){
 	$ar_list = array(1=>
 		'ธนาคารกรุงเทพ',

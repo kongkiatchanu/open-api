@@ -13,7 +13,8 @@ class Main extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('document');
+		$this->data['view'] = 'document_login';
+		$this->load->view('template_main',$this->data);
 	}
 
 	function genKey($length = 40){
