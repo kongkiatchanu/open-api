@@ -13,7 +13,7 @@ class Main extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->data['view'] = 'document_login';
+		$this->data['view'] = 'document_account';
 		$this->load->view('template_main',$this->data);
 	}
 
