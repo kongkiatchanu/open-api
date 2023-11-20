@@ -16,6 +16,7 @@ class Main extends CI_Controller {
 	}
 	public function index()
 	{
+		print_r($this->session->userdata('member_logged_in'));
 		$this->data['view'] = 'document_account';
 		$this->load->view('template_main',$this->data);
 	}
