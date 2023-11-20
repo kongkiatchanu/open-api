@@ -114,7 +114,27 @@
 									</h2>
 									<div id="flush-collapseTwo" class="accordion-collapse collapse"
 										aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-										<div class="accordion-body">///</div>
+										<div class="accordion-body">
+										<form action="/main/login" method="post">
+                    <div class="mb-3 row">
+                        <label for="username" class="col-sm-2 col-form-label">อีเมล์</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="password" class="col-sm-2 col-form-label">รหัสผ่าน</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-sm-10 offset-sm-2">
+                            <button class="btn btn-primary">เข้าสู่ระบบ</button>
+                        </div>
+                    </div>
+                </form>
+										</div>
 									</div>
 								</div>
 

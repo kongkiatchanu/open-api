@@ -16,7 +16,7 @@
                 <p>กรุณาเข้าสู่ระบบเพื่อรับ API Key</p>
             </div>
             <div class="col-md-5">
-                <form action="main/login" method="post">
+                <form action="/main/login" method="post">
                     <div class="mb-3 row">
                         <label for="username" class="col-sm-2 col-form-label">อีเมล์</label>
                         <div class="col-sm-10">

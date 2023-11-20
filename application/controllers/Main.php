@@ -149,4 +149,49 @@ class Main extends CI_Controller {
 			redirect(base_url(''));
 		}
 	}
+
+	public function login(){
+		$this->form_validation->set_rules('username', 'username', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('password', 'password', 'trim|required|xss_clean|callback_check_database');
+
+		if($this->form_validation->run() == FALSE)
+		{
+			redirect('/#account');
+		}else{
+
+			$data = array(
+				'user' => $this->session->userdata('admin_logged_in')['username'],
+				'ip' => $_SERVER['REMOTE_ADDR'],
+				'ua' => $_SERVER['HTTP_USER_AGENT'],
+			);
+			$this->admin_model->insert_data('user_log',$data);
+			redirect('/');
+		}
+	}
+
+	public function check_database($password){
+		$username = $this->input->post('username');
+		$result = $this->main_model->login($username, md5(sha1($password)));
+		if($result)
+		{
+			$sess_array = array();
+			foreach($result as $row)
+			{
+				$sess_array = array(
+					'user_name' => $row->user_name,
+					'user_key' => $row->user_key
+				);
+				$this->session->set_userdata('member_logged_in', $sess_array);
+			}
+			return TRUE;
+		}else{
+			$message='<div class="alert alert-danger"><strong>Warning !</strong> Username or Password invalid!</div>';
+			$this->form_validation->set_message('check_database', $message);
+			return false;
+		}
+		
+	}
+
+
+
 }
