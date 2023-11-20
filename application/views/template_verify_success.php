@@ -29,10 +29,10 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                        <div class="col-sm-10 offset-sm-2">
-                            <button class="btn btn-primary">เข้าสู่ระบบ</button>
+                            <div class="col-sm-10 offset-sm-2">
+                                <button class="btn btn-primary">เข้าสู่ระบบ</button>
+                            </div>
                         </div>
-</div>
                     </form>
 
                 </div>
