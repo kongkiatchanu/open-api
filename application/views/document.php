@@ -12,7 +12,7 @@
                 </h5>
                 <p class="m-0">API Key</p>
                 <pre class="brush: javascript;"><?= $member['user_key'] ?></pre>
-                <p><a href="/main/logout" class="btn btn-sm btn-dander"> ออกจากระบบ</a></p>
+                <p><a href="/main/logout" class="btn btn-sm btn-danger"> ออกจากระบบ</a></p>
             </div>
             <div class="col-md-6"></div>
         </div>
