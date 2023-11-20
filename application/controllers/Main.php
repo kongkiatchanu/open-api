@@ -77,7 +77,10 @@ class Main extends CI_Controller {
 			);
 			$this->load->view('template_verify', $ar);
 		}
-		
+	}
+	
+	public function verify_account(){
+		echo $this->uri->segment(2);
 	}
 
 	public function register(){
