@@ -84,8 +84,14 @@ class Main extends CI_Controller {
 		if(@$token){
 			$query = $this->db->get_where('users', array('securekey' =>$token));
 			$rs = $query->result_array();
+			if($rs){
+				$this->db->where('securekey',$token);
+				$this->db->update('users', array('user_approve'=>1));
 
-			print_r($rs);
+				$this->data['rs'] = $rs;
+				$this->data['view'] = 'template_verify_success';
+				$this->load->view('template_main',$this->data);
+			}
 		}
 	}
 
