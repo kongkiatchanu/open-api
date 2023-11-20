@@ -1,3 +1,4 @@
+<?php $member = $this->session->userdata('member_logged_in');?>
 <section class="app-brief" id="account">
     <div class="container left-align">
         <div class="section-header">
