@@ -116,7 +116,7 @@ table, td { color: #000000; } @media (max-width: 480px) { #u_content_heading_1 .
     <tr>
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:30px 10px 10px;font-family:'Raleway',sans-serif;" align="left">
         
-  <h1 class="v-font-size" style="margin: 0px; line-height: 140%; text-align: center; word-wrap: break-word; font-size: 35px; font-weight: 400;"><strong>Verify Email<br /></strong></h1>
+  
 
       </td>
     </tr>
