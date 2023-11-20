@@ -28,7 +28,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<link rel="stylesheet" href="<?= base_url('template') ?>/plugins/jstree/dist/themes/default/style.min.css">
 	<link rel="stylesheet" href="<?= base_url('template') ?>/plugins/perfect-scrollbar/css/perfect-scrollbar.css">
 	<link rel="stylesheet" href="<?= base_url('template') ?>/plugins/font-awesome/css/all.min.css">
-	<link rel="stylesheet" href="<?= base_url('template') ?>/css/style.css?v=1">
+	<link rel="stylesheet" href="<?= base_url('template') ?>/css/style.css?v=<?=date('his')?>">
 
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
