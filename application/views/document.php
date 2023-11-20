@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-6">
                 <h5 class="title">อีเมล์
-                    <?= $rs[0]['user_email'] ?> ได้รับการยืนยันเรียบร้อย
+                    <?= $member['user_email'] ?> ได้รับการยืนยันเรียบร้อย
                 </h5>
                 <p><?=$member['user_name']?></p>
                 <p>API Key</p>

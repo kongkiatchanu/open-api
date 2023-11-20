@@ -183,6 +183,7 @@ class Main extends CI_Controller {
 			foreach($result as $row)
 			{
 				$sess_array = array(
+					'user_email' =>$row->user_email,
 					'user_name' => $row->user_name,
 					'user_key' => $row->user_key
 				);
@@ -194,7 +195,12 @@ class Main extends CI_Controller {
 			$this->form_validation->set_message('check_database', $message);
 			return false;
 		}
-		
+	}
+
+	public function logout(){
+		$this->session->unset_userdata('member_logged_in');
+		redirect('/');
+		exit();
 	}
 
 
