@@ -80,7 +80,13 @@ class Main extends CI_Controller {
 	}
 	
 	public function verify_account(){
-		echo $this->uri->segment(2);
+		$token =  $this->uri->segment(2);
+		if(@$token){
+			$query = $this->db->get_where('users', array('securekey' =>$token));
+			$rs = $query->result_array();
+
+			print_r($rs);
+		}
 	}
 
 	public function register(){
